@@ -1,0 +1,65 @@
+DEBUG: identifier from identifier: grd
+DEBUG: identifier from identifier: CPP_grd
+DEBUG: current statement in identifier: 
+DEBUG: Outputting int declaration
+DEBUG: Identifiers from assign: CPP_grd
+DEBUG: Before concatenation: 
+DEBUG: After concatenation: int CPP_grd;
+;
+
+DEBUG: identifier from identifier: grd
+DEBUG: identifier from identifier: CPP_grd
+DEBUG: current statement in identifier: int CPP_grd;
+;
+
+DEBUG: Outputting assignment statement with expression from statement
+DEBUG: Before concatenation: int CPP_grd;
+;
+
+DEBUG: After concatenation: int CPP_grd;
+;
+CPP_grd = 90;
+
+DEBUG: identifier from identifier: grd
+DEBUG: identifier from identifier: CPP_grd
+DEBUG: current statement in identifier: int CPP_grd;
+;
+CPP_grd = 90;
+
+DEBUG: identifier from expression: CPP_grd
+DEBUG: statement from expression at the moment: int CPP_grd;
+;
+CPP_grd = 90;
+
+DEBUG: statement from expression at the moment: int CPP_grd;
+;
+CPP_grd = 90;
+
+DEBUG: Output string literal: "alright"
+DEBUG: Before concatenation: int CPP_grd;
+;
+CPP_grd = 90;
+
+DEBUG: After concatenation: int CPP_grd;
+;
+CPP_grd = 90;
+std::cout << "alright" << std::endl;
+
+DEBUG: Outputting if statement with multiple statements
+DEBUG: Condition: (CPP_grd >= 90)
+DEBUG: Statements: 
+DEBUG: Generated if block: if ((CPP_grd >= 90)) {
+}
+
+DEBUG: Before concatenation: int CPP_grd;
+;
+CPP_grd = 90;
+std::cout << "alright" << std::endl;
+
+DEBUG: After concatenation: int CPP_grd;
+;
+CPP_grd = 90;
+std::cout << "alright" << std::endl;
+if ((CPP_grd >= 90)) {
+}
+

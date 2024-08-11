@@ -26,8 +26,9 @@ void yyerror(const char *s) {
 }
 
 FILE *outfile;
+FILE *debugfile;
 char* declarations;
-char* statements;
+char* statementsL;
 
 
 extern FILE *yyin;
@@ -36,6 +37,7 @@ extern int yylineno;
 extern int yydebug;
 
 int isSetOrCollection(const char* var);
+#define DEBUG_PRINT(msg, ...) fprintf(debugfile, "DEBUG: " msg "\n", ##__VA_ARGS__)
 %}
 
 %union {
@@ -72,11 +74,46 @@ program:
     ;
 
 declaration:
-    INT identifiers SEMICOLON { asprintf(&$$, "int %s;\n", $2); free($2); }
-    | STR identifiers SEMICOLON { asprintf(&$$, "std::string %s;\n", $2); free($2); }
-    | SET identifiers SEMICOLON { asprintf(&$$, "std::set<int> %s;\n", $2); free($2); }
-    | COLLECTION identifiers SEMICOLON { asprintf(&$$, "std::set<std::string> %s;\n", $2); free($2); }
+    INT identifiers SEMICOLON { 
+        DEBUG_PRINT("Outputting int declaration");
+        DEBUG_PRINT("Identifiers from assign: %s", $2);
+        asprintf(&$$, "int %s;\n", $2); 
+        char* temp = strtok($2, ",");
+        while (temp != NULL) {
+            putsym(temp, INT);  // Add to symbol table
+            temp = strtok(NULL, ",");
+        }
+        free($2); 
+    }
+    | STR identifiers SEMICOLON { 
+        asprintf(&$$, "std::string %s;\n", $2); 
+        char* temp = strtok($2, ",");
+        while (temp != NULL) {
+            putsym(temp, STR);  // Add to symbol table
+            temp = strtok(NULL, ",");
+        }
+        free($2); 
+    }
+    | SET identifiers SEMICOLON { 
+        asprintf(&$$, "std::set<int> %s;\n", $2); 
+        char* temp = strtok($2, ",");
+        while (temp != NULL) {
+            putsym(temp, SET);  // Add to symbol table
+            temp = strtok(NULL, ",");
+        }
+        free($2); 
+    }
+    | COLLECTION identifiers SEMICOLON { 
+        asprintf(&$$, "std::set<std::string> %s;\n", $2); 
+        char* temp = strtok($2, ",");
+        while (temp != NULL) {
+            putsym(temp, COLLECTION);  // Add to symbol table
+            temp = strtok(NULL, ",");
+        }
+        free($2); 
+    }
     ;
+
 
 identifiers:
     identifier { 
@@ -97,23 +134,29 @@ identifiers:
 
 identifier:
     IDENTIFIER { 
+        DEBUG_PRINT("identifier from identifier: %s", $1);
         char* temp;
         asprintf(&temp, "CPP_%s", $1);
         free($1);
         $$ = temp;
+        DEBUG_PRINT("identifier from identifier: %s", $$);
+        DEBUG_PRINT("current statement in identifier: %s", statementsL);
      }
     ;
 
 statements:
-    /* empty */ { statements = strdup(""); }
+    /* empty */ { $$ = strdup(""); }
     | statements statement { 
+        DEBUG_PRINT("Before concatenation: %s", statementsL);
         char* temp; 
-        asprintf(&temp, "%s%s", statements, $2); 
-        free(statements); 
+        asprintf(&temp, "%s%s", statementsL, $2); 
+        DEBUG_PRINT("After concatenation: %s", temp);
+        free(statementsL); 
         free($2); 
-        statements = temp; 
+        statementsL = temp; 
     }
     ;
+
 
 statement:
     declaration { 
@@ -128,6 +171,27 @@ statement:
         asprintf(&$$, "std::cout << %s;\nstd::cin >> %s;\n", $2, $3); 
         free($2); 
         free($3); 
+    }
+    | OUTPUT STRING_LITERAL SEMICOLON { 
+        DEBUG_PRINT("Output string literal: %s", $2);
+        asprintf(&$$, "std::cout << %s << std::endl;\n", $2); 
+        free($2); 
+    }
+    | OUTPUT identifier SEMICOLON {
+        DEBUG_PRINT("Output identifier: %s", $2);
+        int res = isSetOrCollection($2);
+        DEBUG_PRINT("isSetOrCollection: %d", res);
+        if (res) {
+            DEBUG_PRINT("Outputting set or collection");
+            asprintf(&$$, "for (const auto& element : %s) {\n"
+                        "    std::cout << \" \" << element;\n"
+                        "}\n"
+                        "std::cout << std::endl;\n", $2);
+        } else {
+            DEBUG_PRINT("Outputting simple identifier");
+            asprintf(&$$, "std::cout << %s << std::endl;\n", $2);
+        }
+        free($2);
     }
     | OUTPUT STRING_LITERAL expression SEMICOLON { 
         if (isSetOrCollection($3)) {
@@ -150,32 +214,57 @@ statement:
         else {
             asprintf(&$$, "std::cout << %s << %s << std::endl;\n", $2, $3);
         }
+        DEBUG_PRINT("Output string_lteral,expression: %s %s", $2, $3);
         free($2); 
         free($3); 
     }
+    | IF LPAREN identifier RPAREN statement %prec LOWER_THAN_ELSE {
+        DEBUG_PRINT("Outputting if statement with single statement");
+        asprintf(&$$, "if (&%s) {\n%s}\n", $3, $5);
+        free($3);
+        free($5);
+    }
     | IF LPAREN condition RPAREN statement %prec LOWER_THAN_ELSE {
+        DEBUG_PRINT("Outputting if statement with single statement");
         asprintf(&$$, "if (%s) {\n%s}\n", $3, $5);
         free($3);
         free($5);
     }
     | IF LPAREN condition RPAREN statement ELSE statement {
+        DEBUG_PRINT("Outputting if statement with else statement");
         asprintf(&$$, "if (%s) {\n%s} else {\n%s}\n", $3, $5, $7);
         free($3);
         free($5);
         free($7);
     }
     | IF LPAREN condition RPAREN LBRACE statements RBRACE {
-        asprintf(&$$, "if (%s) {\n%s}\n", $3, $6);
+        DEBUG_PRINT("Outputting if statement with multiple statements");
+        DEBUG_PRINT("Condition: %s", $3);
+        DEBUG_PRINT("Statements: %s", $6);
+
+        char* if_block;
+        asprintf(&if_block, "if (%s) {\n%s}\n", $3, $6);
+
+        // Check if_block content
+        DEBUG_PRINT("Generated if block: %s", if_block);
+
+        $$ = if_block;
+
         free($3);
-        free($6);
+        // free($6);
     }
+
+
+
     | IF LPAREN condition RPAREN LBRACE statements RBRACE ELSE LBRACE statements RBRACE {
+        DEBUG_PRINT("Outputting if statement with else block");
         asprintf(&$$, "if (%s) {\n%s} else {\n%s}\n", $3, $6, $10);
         free($3);
         free($6);
         free($10);
     }
     | IF LPAREN condition RPAREN LBRACE statements RBRACE ELSE statement {
+        DEBUG_PRINT("Outputting if statement with else statement");
         asprintf(&$$, "if (%s) {\n%s} else {\n%s}\n", $3, $6, $9);
         free($3);
         free($6);
@@ -193,6 +282,7 @@ statement:
         free($6); 
     }
     | identifier ASSIGN expression SEMICOLON { 
+        DEBUG_PRINT("Outputting assignment statement with expression from statement");
         if (strstr($3, "+") != NULL && strstr($3, "{") != NULL) {
             // Case 1: Adding multiple elements to a collection
             char *plus = strchr($3, '+');
@@ -217,6 +307,7 @@ statement:
         free($1);
         free($3);
     }
+    
 
     ;
 
@@ -225,8 +316,17 @@ expression:
     | STRING_LITERAL { $$ = strdup($1); }
     | set_literal { $$ = $1; }
     | col_literal { $$ = $1; }
-    | identifier { $$ = $1; }
+    | identifier { 
+        DEBUG_PRINT("identifier from expression: %s", $1);
+        DEBUG_PRINT("statement from expression at the moment: %s", statementsL);
+        char* temp;
+        asprintf(&temp, "%s", $1);
+        free($1);
+        $$ = temp; 
+        DEBUG_PRINT("statement from expression at the moment: %s", statementsL);
+        }
     | identifier ASSIGN expression { 
+        DEBUG_PRINT("Outputting assignment statement with expression from expression");
         if (strstr($3, "+") != NULL && strstr($3, "{") != NULL) {
             char *leftSide = strdup($3);
             char *plus = strchr(leftSide, '+');
@@ -300,7 +400,13 @@ expression:
     ;
 
 condition:
-    expression EQ expression { 
+    identifier {
+        char* temp;
+        asprintf(&temp, "&%s", $1);
+        free($1);
+        $$ = temp;
+    }
+    | expression EQ expression { 
         char* temp; 
         asprintf(&temp, "(%s == %s)", $1, $3); 
         free($1); 
@@ -429,8 +535,11 @@ std::set<std::string> union_sets(const std::set<std::string>& a, const std::set<
 }
 
 int isSetOrCollection(const char* var) {
+    DEBUG_PRINT("Checking if %s is a set or collection", var);
     symrec* symbol = getsym(var);
+    // DEBUG_PRINT("Symbol type: %d", symbol->type);
     if (symbol) {
+        DEBUG_PRINT("Symbol type: %d", symbol->type);
         return (symbol->type == SET || symbol->type == COLLECTION);
     }
     return 0;
@@ -439,7 +548,7 @@ int isSetOrCollection(const char* var) {
 int main(int argc, char **argv) {
     yydebug = 1;  // Enable debug output
     declarations = strdup("");
-    statements = strdup("");
+    statementsL = strdup("");
 
     outfile = fopen("output.cpp", "w");
     if (!outfile) {
@@ -447,6 +556,11 @@ int main(int argc, char **argv) {
         return 1;
     }
 
+    debugfile = fopen("debug.log", "w");
+    if (!debugfile) {
+        fprintf(stderr, "Error opening debug file\n");
+        return 1;
+    }
     ++argv, --argc;
     if (argc > 0)
         yyin = fopen(argv[0], "r");
@@ -489,13 +603,14 @@ int main(int argc, char **argv) {
     yyparse();
 
     // Output the generated code to the output file
-    fprintf(outfile, "%s", statements);
+    fprintf(outfile, "%s", statementsL);
 
     // Output the closing brace for main function
     fprintf(outfile, "    return 0;\n}\n");
 
     fclose(outfile);
+    fclose(debugfile);
     free(declarations);
-    free(statements);
+    free(statementsL);
     return 0;
 }
