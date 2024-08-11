@@ -26,9 +26,7 @@ void yyerror(const char *s) {
 }
 
 FILE *outfile;
-char* declarations;
-char* statements;
-
+FILE *debugfile;
 
 extern FILE *yyin;
 extern int yylex();
@@ -36,6 +34,21 @@ extern int yylineno;
 extern int yydebug;
 
 int isSetOrCollection(const char* var);
+
+char* indent_string(const char* str, int indent_level) {
+    char* result = strdup("");
+    char* line = strtok(strdup(str), "\n");
+    while (line != NULL) {
+        char* temp;
+        asprintf(&temp, "%s%*s%s\n", result, indent_level * 4, "", line);
+        free(result);
+        result = temp;
+        line = strtok(NULL, "\n");
+    }
+    return result;
+}
+
+#define DEBUG_PRINT(msg, ...) fprintf(debugfile, "DEBUG: " msg "\n", ##__VA_ARGS__)
 %}
 
 %union {
@@ -68,321 +81,308 @@ int isSetOrCollection(const char* var);
 %%
 
 program:
-    statements 
+    statements { 
+        DEBUG_PRINT("Finished parsing statements");
+        fprintf(outfile, "%s", $1);
+    }
     ;
 
 declaration:
-    INT identifiers SEMICOLON { asprintf(&$$, "int %s;\n", $2); free($2); }
-    | STR identifiers SEMICOLON { asprintf(&$$, "std::string %s;\n", $2); free($2); }
-    | SET identifiers SEMICOLON { asprintf(&$$, "std::set<int> %s;\n", $2); free($2); }
-    | COLLECTION identifiers SEMICOLON { asprintf(&$$, "std::set<std::string> %s;\n", $2); free($2); }
+    INT identifiers SEMICOLON { 
+        DEBUG_PRINT("Parsed INT declaration: CPP_%s", $2);
+        fprintf(outfile, "    int %s;\n", $2);
+        free($2);  // Free after use
+    }
+    | STR identifiers SEMICOLON { 
+        DEBUG_PRINT("Parsed STR declaration: CPP_%s", $2);
+        fprintf(outfile, "    std::string %s;\n", $2);
+        free($2);  // Free after use
+    }
+    | SET identifiers SEMICOLON { 
+        DEBUG_PRINT("Parsed SET declaration: CPP_%s", $2);
+        fprintf(outfile, "    std::set<int> %s;\n", $2);
+        free($2);  // Free after use
+    }
+    | COLLECTION identifiers SEMICOLON { 
+        DEBUG_PRINT("Parsed COLLECTION declaration: CPP_%s", $2);
+        fprintf(outfile, "    std::set<std::string> %s;\n", $2);
+        free($2);  // Free after use
+    }
     ;
+
+
+
+
 
 identifiers:
     identifier { 
-        char* temp;
-        asprintf(&temp, "%s", $1);
-        free($1);
-        $$ = temp;
-
-     }
+        DEBUG_PRINT("Parsed single identifier: %s", $1);
+        $$ = $1;  // Ownership is transferred, no need to free here
+    }
     | identifiers COMMA identifier { 
+        DEBUG_PRINT("Parsed multiple identifiers: %s, %s", $1, $3);
         char* temp; 
-        asprintf(&temp, "%s,%s", $1, $3); 
-        free($1); 
-        free($3); 
-        $$ = temp; 
+        asprintf(&temp, "%s, %s", $1, $3); 
+        free($1);  // Free previous concatenated string
+        free($3);  // Free the current identifier string
+        $$ = temp; // Transfer ownership of the concatenated result
     }
     ;
+
+
 
 identifier:
     IDENTIFIER { 
-        char* temp;
-        asprintf(&temp, "CPP_%s", $1);
-        free($1);
-        $$ = temp;
-     }
+        DEBUG_PRINT("Parsed identifier: %s", $1);
+        if (strcmp($1, "class") == 0) {
+            $$ = strdup("CPP_class");
+        } else {
+            char* temp;
+            asprintf(&temp, "CPP_%s", $1);
+            free($1);
+            $$ = temp;
+        }
+    }
     ;
 
 statements:
-    /* empty */ { statements = strdup(""); }
-    | statements statement { 
-        char* temp; 
-        asprintf(&temp, "%s%s", statements, $2); 
-        free(statements); 
-        free($2); 
-        statements = temp; 
+    /* empty */ { 
+        $$ = strdup(""); 
+    }
+    | statements statement {
+        asprintf(&$$, "%s%s", $1, $2);  // Don't free $1 or $2 for testing
     }
     ;
 
+
 statement:
-    declaration { 
-        asprintf(&$$, "%s;\n", $1); 
-        free($1);
-    } 
+    declaration
     | expression SEMICOLON { 
-        asprintf(&$$, "%s;\n", $1); 
-        free($1); 
+        DEBUG_PRINT("Parsed expression statement");
+        fprintf(outfile, "    %s;\n", $1); 
+        free($1);  // Free the expression string
     }
     | INPUT STRING_LITERAL identifier SEMICOLON { 
-        asprintf(&$$, "std::cout << %s;\nstd::cin >> %s;\n", $2, $3); 
-        free($2); 
-        free($3); 
+        DEBUG_PRINT("Parsed INPUT statement");
+        fprintf(outfile, "    std::cout << %s;\n    std::cin >> %s;\n", $2, $3); 
+        free($2);  // Free the input string
+        free($3);  // Free the identifier
     }
     | OUTPUT STRING_LITERAL expression SEMICOLON { 
-        if (isSetOrCollection($3)) {
-            asprintf(&$$, "std::cout << %s;\n"
-                         "for (const auto& element : %s) {\n"
-                         "    std::cout << \" \" << element;\n"
-                         "}\n"
-                         "std::cout << std::endl;\n", $2, $3);
-        }
-        else if (strchr($3,MINUS) != NULL)
-        {
-            char* leftSide = strtok($3, "-");
-            char* rightSide = strtok(NULL, "-");
-            asprintf(&$$, "std::cout << %s << (%s - intersection(%s, %s)) << std::endl;\n", $2, leftSide, rightSide, rightSide);
-        }
-        else if (strstr($3, "+") != NULL) {
-            // Generate code to compute the union of sets using union_sets function
-            asprintf(&$$, "std::cout << %s << union_sets%s, %s << std::endl;\n", $2, strtok($3, "+"), strtok(NULL, "+"));
-        }
-        else {
-            asprintf(&$$, "std::cout << %s << %s << std::endl;\n", $2, $3);
-        }
-        free($2); 
-        free($3); 
+        DEBUG_PRINT("Parsed OUTPUT statement");
+        fprintf(outfile, "    std::cout << %s << %s << std::endl;\n", $2, $3);
+        free($2);  // Free the output string
+        free($3);  // Free the expression string
     }
     | IF LPAREN condition RPAREN statement %prec LOWER_THAN_ELSE {
-        asprintf(&$$, "if (%s) {\n%s}\n", $3, $5);
-        free($3);
-        free($5);
+        DEBUG_PRINT("Parsed IF statement");
+        fprintf(outfile, "    if (%s) {\n    %s    }\n", $3, $5);
+        free($3);  // Free the condition
+        free($5);  // Free the inner statement
     }
     | IF LPAREN condition RPAREN statement ELSE statement {
-        asprintf(&$$, "if (%s) {\n%s} else {\n%s}\n", $3, $5, $7);
-        free($3);
-        free($5);
-        free($7);
+        DEBUG_PRINT("Parsed IF-ELSE statement");
+        fprintf(outfile, "    if (%s) {\n    %s    } else {\n    %s    }\n", $3, $5, $7);
+        free($3);  // Free the condition
+        free($5);  // Free the if-statement
+        free($7);  // Free the else-statement
     }
-    | IF LPAREN condition RPAREN LBRACE statements RBRACE {
-        asprintf(&$$, "if (%s) {\n%s}\n", $3, $6);
-        free($3);
-        free($6);
+    | WHILE LPAREN condition RPAREN LBRACE statements RBRACE { 
+        DEBUG_PRINT("Parsed WHILE statement");
+        fprintf(outfile, "    while (%s) {\n%s    }\n", $3, $6); 
+        free($3);  // Free the condition
+        free($6);  // Free the statements inside the loop
     }
-    | IF LPAREN condition RPAREN LBRACE statements RBRACE ELSE LBRACE statements RBRACE {
-        asprintf(&$$, "if (%s) {\n%s} else {\n%s}\n", $3, $6, $10);
-        free($3);
-        free($6);
-        free($10);
-    }
-    | IF LPAREN condition RPAREN LBRACE statements RBRACE ELSE statement {
-        asprintf(&$$, "if (%s) {\n%s} else {\n%s}\n", $3, $6, $9);
-        free($3);
-        free($6);
-        free($9);
-    }
-    | WHILE condition LBRACE statements RBRACE { 
-        asprintf(&$$, "while (%s) {\n%s}\n", $2, $4); 
-        free($2); 
-        free($4); 
-    }
-    | FOR identifier COLON identifier LBRACE statements RBRACE { 
-        asprintf(&$$, "for (const auto& %s : %s) {\n%s}\n", $2, $4, $6); 
-        free($2); 
-        free($4); 
-        free($6); 
+    | FOR LPAREN identifier COLON identifier RPAREN LBRACE statements RBRACE { 
+        DEBUG_PRINT("Statements: %s", $8);
+        DEBUG_PRINT("Parsed FOR statement: for (%s : %s)", $3, $5);
+        fprintf(outfile, "    for (const auto& %s : %s) {\n", $3, $5); 
+        fprintf(outfile, "%s", $8);  // Output the statements correctly
+        fprintf(outfile, "    }\n");
+        free($3);  // Free the first identifier
+        free($5);  // Free the second identifier
+        free($8);  // Free the inner statements
     }
     | identifier ASSIGN expression SEMICOLON { 
-        if (strstr($3, "+") != NULL && strstr($3, "{") != NULL) {
-            // Case 1: Adding multiple elements to a collection
-            char *plus = strchr($3, '+');
-            *plus = '\0';
-            char *rightSide = plus + 1;
-            while (*rightSide == ' ') rightSide++; // Skip spaces
-            asprintf(&$$, "%s.insert(%s);\n", $1, rightSide);
-        } else if (strstr($3, "+") != NULL && strchr($3, '"') != NULL) {
-            // Case 2: Adding a single string element to a collection
-            char *plus = strchr($3, '+');
-            *plus = '\0';
-            char *rightSide = plus + 1;
-            while (*rightSide == ' ') rightSide++; // Skip spaces
-            asprintf(&$$, "%s.insert(%s;\n", $1, rightSide);
-        } else if (strchr($3, '{') != NULL) {
-            // Case 3: Direct assignment of a set/collection
-            asprintf(&$$, "%s.insert(%s);\n", $1, $3);
-        } else {
-            // Case 4: Simple assignment
-            asprintf(&$$, "%s = %s;\n", $1, $3); 
-        }
-        free($1);
-        free($3);
+        DEBUG_PRINT("Parsed assignment: %s = %s", $1, $3);
+        fprintf(outfile, "    %s = %s;\n", $1, $3);
+        free($1);  // Free the identifier
+        free($3);  // Free the expression
     }
-
+    | identifier ASSIGN col_literal SEMICOLON {
+        DEBUG_PRINT("Parsed assignment of collection: %s = %s", $1, $3);
+        fprintf(outfile, "    CPP_%s = %s;\n", $1, $3);  // Use CPP_ prefix here
+        free($1);  // Free identifier string
+        free($3);  // Free collection literal
+    }
+    | identifier ASSIGN set_literal SEMICOLON {
+        DEBUG_PRINT("Parsed assignment of set: %s = %s", $1, $3);
+        fprintf(outfile, "    CPP_%s = %s;\n", $1, $3);  // Use CPP_ prefix here
+        free($1);  // Free identifier string
+        free($3);  // Free set literal
+    }
     ;
 
 expression:
-    NUMBER { asprintf(&$$, "%d", $1); }
-    | STRING_LITERAL { $$ = strdup($1); }
-    | set_literal { $$ = $1; }
-    | col_literal { $$ = $1; }
-    | identifier { $$ = $1; }
-    | identifier ASSIGN expression { 
-        if (strstr($3, "+") != NULL && strstr($3, "{") != NULL) {
-            char *leftSide = strdup($3);
-            char *plus = strchr(leftSide, '+');
-            *plus = '\0';
-            char *rightSide = plus + 1;
-            while (*rightSide == ' ') rightSide++; // Skip spaces
-            asprintf(&$$, "%s.insert(%s.begin(), %s.end())", $1, rightSide, rightSide);
-            free(leftSide);
-        } else if (strstr($3, "{") != NULL) {
-            asprintf(&$$, "%s.insert(%s.begin(), %s.end())", $1, $3, $3);
-        } else {
-            asprintf(&$$, "%s = %s", $1, $3); 
-        }
-        free($1); 
-        free($3); 
+    NUMBER { 
+        DEBUG_PRINT("Parsed NUMBER: %d", $1);
+        asprintf(&$$, "%d", $1); 
+    }
+    | STRING_LITERAL { 
+        DEBUG_PRINT("Parsed STRING_LITERAL: %s", $1);
+        $$ = $1; 
+    }
+    | set_literal { 
+        DEBUG_PRINT("Parsed set_literal");
+        $$ = $1; 
+    }
+    | col_literal { 
+        DEBUG_PRINT("Parsed col_literal");
+        $$ = $1; 
+    }
+    | identifier { 
+        DEBUG_PRINT("Parsed identifier in expression: %s", $1);
+        $$ = $1; 
     }
     | expression PLUS expression {
-        if (strstr($1, "{") != NULL || strstr($3, "{") != NULL) {
-            asprintf(&$$, "%s + %s", $1, $3);
-        } 
-        else if (strstr($3, "{") != NULL) {
-            asprintf(&$$, "%s.insert(%s)", $1, $3);
-        }
-        else {
-            asprintf(&$$, "(%s + %s)", $1, $3);
-        }
+        DEBUG_PRINT("Parsed addition");
+        asprintf(&$$, "(%s + %s)", $1, $3);
         free($1);
         free($3);
     }
     | expression MINUS expression { 
-         char* temp; 
-        asprintf(&temp, "intersection(%s, %s)", $1, $3); 
+        DEBUG_PRINT("Parsed subtraction");
+        asprintf(&$$, "(%s - %s)", $1, $3); 
         free($1); 
         free($3); 
-        $$ = temp; 
     }
     | expression MUL expression { 
-        char* temp; 
-        asprintf(&temp, "(%s * %s)", $1, $3); 
+        DEBUG_PRINT("Parsed multiplication");
+        asprintf(&$$, "(%s * %s)", $1, $3); 
         free($1); 
         free($3); 
-        $$ = temp; 
     }
     | expression DIV expression { 
-        char* temp; 
-        asprintf(&temp, "(%s / %s)", $1, $3); 
+        DEBUG_PRINT("Parsed division");
+        asprintf(&$$, "(%s / %s)", $1, $3); 
         free($1); 
         free($3); 
-        $$ = temp; 
     }
     | expression INTERSECT expression { 
-        char* temp; 
-        asprintf(&temp, "intersection(%s, %s)", $1, $3); 
+        DEBUG_PRINT("Parsed intersection");
+        asprintf(&$$, "intersection(%s, %s)", $1, $3); 
         free($1); 
         free($3); 
-        $$ = temp; 
     }
     | expression UNION expression { 
-        char* temp; 
-        asprintf(&temp, "union_sets(%s, %s)", $1, $3); 
+        DEBUG_PRINT("Parsed union");
+        asprintf(&$$, "union_sets(%s, %s)", $1, $3); 
         free($1); 
         free($3); 
-        $$ = temp; 
     }
     | LPAREN expression RPAREN { 
-        char* temp; 
-        asprintf(&temp, "(%s)", $2); 
+        DEBUG_PRINT("Parsed parenthesized expression");
+        asprintf(&$$, "(%s)", $2); 
         free($2); 
-        $$ = temp; 
     }
     ;
 
 condition:
-    expression EQ expression { 
-        char* temp; 
-        asprintf(&temp, "(%s == %s)", $1, $3); 
+    expression { 
+        DEBUG_PRINT("Parsed condition (single expression)");
+        $$ = $1; 
+    }
+    | expression EQ expression { 
+        DEBUG_PRINT("Parsed equality condition");
+        asprintf(&$$, "(%s == %s)", $1, $3); 
         free($1); 
         free($3); 
-        $$ = temp; 
     }
     | expression NEQ expression { 
-        char* temp; 
-        asprintf(&temp, "(%s != %s)", $1, $3); 
+        DEBUG_PRINT("Parsed inequality condition");
+        asprintf(&$$, "(%s != %s)", $1, $3); 
         free($1); 
         free($3); 
-        $$ = temp; 
     }
     | expression LT expression { 
-        char* temp; 
-        asprintf(&temp, "(%s < %s)", $1, $3); 
+        DEBUG_PRINT("Parsed less than condition");
+        asprintf(&$$, "(%s < %s)", $1, $3); 
         free($1); 
         free($3); 
-        $$ = temp; 
     }
     | expression LE expression { 
-        char* temp; 
-        asprintf(&temp, "(%s <= %s)", $1, $3); 
+        DEBUG_PRINT("Parsed less than or equal condition");
+        asprintf(&$$, "(%s <= %s)", $1, $3); 
         free($1); 
         free($3); 
-        $$ = temp; 
     }
     | expression GT expression { 
-        char* temp; 
-        asprintf(&temp, "(%s > %s)", $1, $3); 
+        DEBUG_PRINT("Parsed greater than condition");
+        asprintf(&$$, "(%s > %s)", $1, $3); 
         free($1); 
         free($3); 
-        $$ = temp; 
     }
     | expression GE expression { 
-        char* temp; 
-        asprintf(&temp, "(%s >= %s)", $1, $3); 
+        DEBUG_PRINT("Parsed greater than or equal condition");
+        asprintf(&$$, "(%s >= %s)", $1, $3); 
         free($1); 
         free($3); 
-        $$ = temp; 
     }
     ;
 
 set_literal:
     LBRACKET number_list RBRACKET { 
+        DEBUG_PRINT("Parsed set literal");
         asprintf(&$$, "{%s}", $2); 
         free($2); 
     }
     ;
 
 number_list:
-    NUMBER { asprintf(&$$, "%d", $1); }
-    | number_list COMMA NUMBER {
-        char* temp;
-        asprintf(&temp, "%s, %d", $1, $3);
-        free($1);
-        $$ = temp;
+    NUMBER { 
+        DEBUG_PRINT("Parsed single number in list: %d", $1);
+        asprintf(&$$, "%d", $1); 
     }
-    | /* empty */ { $$ = strdup(""); }
+    | number_list COMMA NUMBER {
+        DEBUG_PRINT("Parsed multiple numbers in list");
+        asprintf(&$$, "%s, %d", $1, $3);
+        free($1);
+    }
+    | /* empty */ { 
+        DEBUG_PRINT("Parsed empty number list");
+        $$ = strdup(""); 
+    }
     ;
 
 col_literal:
     LBRACE string_list RBRACE { 
+        DEBUG_PRINT("Parsed collection literal: %s", $2);
         asprintf(&$$, "{%s}", $2); 
         free($2); 
     }
-    | LBRACE RBRACE { $$ = strdup("{}"); }
+    | LBRACE RBRACE { 
+        DEBUG_PRINT("Parsed empty collection literal");
+        $$ = strdup("{}"); 
+    }
     ;
+
 
 string_list:
     STRING_LITERAL {
-        asprintf(&$$, "%s", $1);
-        free($1);
+        DEBUG_PRINT("Parsed single string in list: %s", $1);
+        $$ = $1;  // $1 is passed on, no need to free it here
     }
     | string_list COMMA STRING_LITERAL {
+        DEBUG_PRINT("Parsed multiple strings in list: %s, %s", $1, $3);
         char* temp;
         asprintf(&temp, "%s, %s", $1, $3);
-        free($1);
-        free($3);
-        $$ = temp;
+        free($1);  // Free the previous string list
+        free($3);  // Free the current string
+        $$ = temp; // Store the concatenated result
     }
     ;
+
+
 
 %%
 
@@ -438,12 +438,15 @@ int isSetOrCollection(const char* var) {
 
 int main(int argc, char **argv) {
     yydebug = 1;  // Enable debug output
-    declarations = strdup("");
-    statements = strdup("");
 
     outfile = fopen("output.cpp", "w");
     if (!outfile) {
         fprintf(stderr, "Error opening output file\n");
+        return 1;
+    }
+    debugfile = fopen("debug.log", "w");
+    if (!debugfile) {
+        fprintf(stderr, "Error opening debug file\n");
         return 1;
     }
 
@@ -489,13 +492,13 @@ int main(int argc, char **argv) {
     yyparse();
 
     // Output the generated code to the output file
-    fprintf(outfile, "%s", statements);
 
     // Output the closing brace for main function
     fprintf(outfile, "    return 0;\n}\n");
 
     fclose(outfile);
-    free(declarations);
-    free(statements);
+    fclose(debugfile);
+    // free(declarations);
+    // free(statements);
     return 0;
 }

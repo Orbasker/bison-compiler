@@ -1,0 +1,55 @@
+DEBUG: Parsed identifier: class
+DEBUG: Parsed single identifier: CPP_class
+DEBUG: Parsed identifier: highGradeStudents
+DEBUG: Parsed multiple identifiers: CPP_class, CPP_highGradeStudents
+DEBUG: Parsed identifier: lowGradeStudents
+DEBUG: Parsed multiple identifiers: CPP_class, CPP_highGradeStudents, CPP_lowGradeStudents
+DEBUG: Parsed identifier: avgGradeStudents
+DEBUG: Parsed multiple identifiers: CPP_class, CPP_highGradeStudents, CPP_lowGradeStudents, CPP_avgGradeStudents
+DEBUG: Parsed COLLECTION declaration: CPP_CPP_class, CPP_highGradeStudents, CPP_lowGradeStudents, CPP_avgGradeStudents
+DEBUG: Parsed identifier: grades
+DEBUG: Parsed single identifier: CPP_grades
+DEBUG: Parsed identifier: gradesHigh
+DEBUG: Parsed multiple identifiers: CPP_grades, CPP_gradesHigh
+DEBUG: Parsed SET declaration: CPP_CPP_grades, CPP_gradesHigh
+DEBUG: Parsed identifier: grd
+DEBUG: Parsed single identifier: CPP_grd
+DEBUG: Parsed INT declaration: CPP_CPP_grd
+DEBUG: Parsed identifier: student
+DEBUG: Parsed single identifier: CPP_student
+DEBUG: Parsed STR declaration: CPP_CPP_student
+DEBUG: Parsed identifier: class
+DEBUG: Parsed single string in list: "Rafi_Suisa"
+DEBUG: Parsed multiple strings in list: "Rafi_Suisa", "Tamar_Even"
+DEBUG: Parsed multiple strings in list: "Rafi_Suisa", "Tamar_Even", "Avi_Maoz"
+DEBUG: Parsed multiple strings in list: "Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer"
+DEBUG: Parsed multiple strings in list: "Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz"
+DEBUG: Parsed multiple strings in list: "Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi"
+DEBUG: Parsed multiple strings in list: "Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha"
+DEBUG: Parsed multiple strings in list: "Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban"
+DEBUG: Parsed multiple strings in list: "Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal"
+DEBUG: Parsed multiple strings in list: "Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"
+DEBUG: Parsed collection literal: "Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"
+DEBUG: Parsed assignment of collection: CPP_class = {"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"}
+DEBUG: Parsed identifier: gradesHigh
+DEBUG: Parsed empty number list
+DEBUG: Parsed set literal
+DEBUG: Parsed assignment of set: CPP_gradesHigh = {}
+DEBUG: Parsed identifier: highGradeStudents
+DEBUG: Parsed empty collection literal
+DEBUG: Parsed assignment of collection: CPP_highGradeStudents = {}
+DEBUG: Parsed identifier: student
+DEBUG: Parsed identifier: class
+DEBUG: Parsed identifier: student
+DEBUG: Parsed identifier in expression: CPP_student
+DEBUG: Parsed OUTPUT statement
+DEBUG: Parsed identifier: grd
+DEBUG: Parsed INPUT statement
+DEBUG: Parsed identifier: grd
+DEBUG: Parsed identifier in expression: CPP_grd
+DEBUG: Parsed OUTPUT statement
+DEBUG: Statements: 
+DEBUG: Parsed FOR statement: for (CPP_student : CPP_class)
+DEBUG: Parsed identifier: gradesHigh
+DEBUG: Parsed identifier in expression: CPP_gradesHigh
+DEBUG: Parsed condition (single expression)

@@ -29,32 +29,18 @@ std::set<std::string> union_sets(const std::set<std::string>& a, const std::set<
 
 std::ostream& operator<<(std::ostream& os, const std::set<std::string>& set) { os << "{"; for (auto it = set.begin(); it != set.end(); ++it) { if (it != set.begin()) os << ", "; os << *it; } os << "}"; return os; }
 int main() {
-std::set<std::string> CPP_highTech,CPP_gaming;
-;
-std::set<std::string> CPP_software,CPP_hardware,CPP_industrial;
-;
-CPP_highTech.insert({"Apple", "Google", "Microsoft", "Nvidia", "Adobe", "Oracle", "Sap"});
-CPP_highTech.insert({"PayPal", "Nice", "Amdocs", "OpenAI", "Ford", "Mercedes"});
-CPP_gaming.insert({"Sony", "Apple", "Microsoft", "Google", "Nintendo", "Playtika"});
-CPP_software.insert({"Apple", "Microsoft", "Oracle", "Google", "Sap", "PayPal", "Playtika", "Amdocs", "OpenAI"});
-CPP_hardware.insert({"Apple", "Nice", "Sony", "Google", "Cummins", "Nucor", "Microsoft", "Nvidia"});
-CPP_industrial.insert({"Caterpillar", "Cummins", "Nucor"});
-std::cout << "Companies that sell hardware & software:" << intersection(CPP_software, CPP_hardware) << std::endl;
-std::set<std::string> CPP_highSW;
-;
-CPP_highSW = intersection(CPP_software, CPP_highTech);
-if ((CPP_highSW == CPP_software)) {
-std::cout << "All software companies are high-tech companies:" << CPP_highSW << std::endl;
-} else {
-std::cout << "Not all software companies are high-tech companies:" << CPP_highSW << std::endl;
-}
-CPP_highSW.insert("Playtika");
-if ((CPP_highSW == CPP_software)) {
-std::cout << "Now all software companies are high-tech companies:" << CPP_highSW << std::endl;
-} else {
-std::cout << "Not all software companies are high-tech companies:" << CPP_highSW << std::endl;
-}
-std::cout << "Companies that do software or hardware:" << union_sets(CPP_software ,  CPP_hardware) << std::endl;
-std::cout << "Companies that sell Hardware but not Gaming Software:" << intersection(CPP_hardware, (intersection(CPP_software, CPP_gaming))) << std::endl;
+    std::set<std::string> CPP_class, CPP_highGradeStudents, CPP_lowGradeStudents, CPP_avgGradeStudents;
+    std::set<int> CPP_grades, CPP_gradesHigh;
+    int CPP_grd;
+    std::string CPP_student;
+    CPP_CPP_class = {"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"};
+    CPP_CPP_gradesHigh = {};
+    CPP_CPP_highGradeStudents = {};
+    std::cout << "Grade for:" << CPP_student << std::endl;
+    std::cout << ">";
+    std::cin >> CPP_grd;
+    std::cout << "Grade entered:" << CPP_grd << std::endl;
+    for (const auto& CPP_student : CPP_class) {
+    }
     return 0;
 }
