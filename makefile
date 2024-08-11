@@ -40,7 +40,7 @@ clean:
 
 # Define run target to execute the compiler on example2.set
 run: setlang
-	./setlang example2.set
+	./setlang example1.set
 
 compile_output: output.cpp
 	$(CC) $(CXXFLAGS) -o output output.cpp
