@@ -71,7 +71,6 @@ int isSetOrCollection(const char* var);
 
 program:
     statements {
-        // Only here do we assign to statementsL
         statementsL = $1;
     }
     ;
@@ -222,7 +221,6 @@ statement:
             asprintf(&$$, "std::cout << %s << (%s - intersection(%s, %s)) << std::endl;\n", $2, leftSide, rightSide, rightSide);
         }
         else if (strstr($3, "+") != NULL) {
-            // Generate code to compute the union of sets using union_sets function
             asprintf(&$$, "std::cout << %s << union_sets%s, %s << std::endl;\n", $2, strtok($3, "+"), strtok(NULL, "+"));
         }
         else {
@@ -253,14 +251,10 @@ statement:
     }
     | IF LPAREN condition RPAREN LBRACE statements RBRACE {
         DEBUG_PRINT("Outputting if statement with multiple statements");
-        DEBUG_PRINT("Condition: %s", $3);
-        // DEBUG_PRINT("Statements: %s", $$);
-        DEBUG_PRINT("Statements from statment: %s", $6);
 
         char* if_block;
         asprintf(&if_block, "if (%s) {\n%s}\n", $3, $6);
 
-        // Check if_block content
         DEBUG_PRINT("Generated if block: %s", if_block);
 
         $$ = if_block;
@@ -292,9 +286,6 @@ statement:
     }
     | FOR LPAREN identifier COLON identifier RPAREN statement {
         DEBUG_PRINT("Parsing for loop");
-        DEBUG_PRINT("Iterator: %s", $3);
-        DEBUG_PRINT("Set/Collection: %s", $5);
-        DEBUG_PRINT("Body: %s", $7);
         
         char* for_block;
         asprintf(&for_block, "for (const auto& %s : %s) {\n%s}\n", $3, $5, $7);
@@ -309,9 +300,6 @@ statement:
     }
     | FOR LPAREN NUMBER COLON NUMBER RPAREN statement {
         DEBUG_PRINT("Parsing for loop with number range");
-        DEBUG_PRINT("Start: %d", $3);
-        DEBUG_PRINT("End: %d", $5);
-        DEBUG_PRINT("Body: %s", $7);
         
         char* for_block;
         asprintf(&for_block, "for (int CPP_i = %d; CPP_i <= %d; CPP_i++) {\n%s}\n", $3, $5, $7);
@@ -325,9 +313,6 @@ statement:
     }
     | FOR LPAREN NUMBER COLON identifier RPAREN LBRACE statements RBRACE {
         DEBUG_PRINT("Parsing for loop with number range and identifier");
-        DEBUG_PRINT("Start: %d", $3);
-        DEBUG_PRINT("End: %s", $5);
-        DEBUG_PRINT("Body: %s", $8);
         
         char* for_block;
         asprintf(&for_block, "for (int CPP_i = %d; CPP_i <= %s; CPP_i++) {\n%s}\n", $3, $5, $8);
@@ -342,30 +327,23 @@ statement:
     | identifier ASSIGN expression SEMICOLON { 
         DEBUG_PRINT("Outputting assignment statement with expression from statement");
         if (strstr($3, "+") != NULL && strstr($3, "{") != NULL) {
-            // Case 1: Adding multiple elements to a collection
             char *plus = strchr($3, '+');
             *plus = '\0';
             char *rightSide = plus + 1;
             while (*rightSide == ' ') rightSide++; // Skip spaces
             asprintf(&$$, "%s.insert(%s);\n", $1, rightSide);
         } else if (strstr($3, "+") != NULL && strchr($3, '"') != NULL) {
-            // Case 2: Adding a single string element to a collection
             char *plus = strchr($3, '+');
             *plus = '\0';
             char *rightSide = plus + 1;
             while (*rightSide == ' ') rightSide++; // Skip spaces
             asprintf(&$$, "%s.insert(%s;\n", $1, rightSide);
         } else if (strchr($3, '{') != NULL) {
-            // Case 3: Direct assignment of a set/collection
             asprintf(&$$, "%s.insert(%s);\n", $1, $3);
         } else {
             if (isSetOrCollection($1)) {
                 DEBUG_PRINT("Outputting set or collection range insertion");
-// Case 5: Inserting a range of elements from one set/collection to another
-                DEBUG_PRINT("Assign identifier: %s", $1);
-                DEBUG_PRINT("Expression: %s", $3);
                 
-                 // Generate the nested insertion statement
                 asprintf(&$$, "%s.insert(%s.begin(), %s.end());\n",
                         $1, $1, $1, $3);
 
@@ -373,10 +351,8 @@ statement:
 
             } else {
                 DEBUG_PRINT("Outputting simple assignment");
-                // Case 4: Simple assignment
                 asprintf(&$$, "%s = %s;\n", $1, $3); 
             }
-            // Case 4: Simple assignment
         }
         free($1);
         free($3);
@@ -456,13 +432,7 @@ expression:
             free($1);
             free($3);
         }
-                
-        //     char* temp;
-        //     asprintf(&temp, "(%s - %s)", $1, $3);
-        //     free($1);
-        //     free($3);
-        //     $$ = temp;
-        // }
+     
     }
     | expression MUL expression { 
         DEBUG_PRINT("Outputting multiplication expression");
@@ -644,7 +614,6 @@ std::set<std::string> union_sets(const std::set<std::string>& a, const std::set<
 int isSetOrCollection(const char* var) {
     DEBUG_PRINT("Checking if %s is a set or collection", var);
     symrec* symbol = getsym(var);
-    // DEBUG_PRINT("Symbol type: %d", symbol->type);
     if (symbol) {
         DEBUG_PRINT("Symbol type: %d", symbol->type);
         return (symbol->type == SET || symbol->type == COLLECTION);
