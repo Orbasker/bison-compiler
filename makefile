@@ -3,11 +3,11 @@ CC = g++
 CXXFLAGS = -std=c++11 -g
 
 # Define source and object files
-SRCS = SetLangLexer.l lang.y SyntaxTree.cpp 
-OBJS = lex.yy.o lang.tab.o SyntaxTree.o 
+SRCS = SetLangLexer.l lang.y 
+OBJS = lex.yy.o lang.tab.o 
 
 # Define header files
-HDRS = SyntaxTree.hpp lang.tab.h
+HDRS = lang.tab.h
 
 # Define all targets
 all: setlang

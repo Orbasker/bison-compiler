@@ -1,224 +1,214 @@
-DEBUG: identifier from identifier: class
-DEBUG: identifier from identifier: CPP_class
+DEBUG: identifier from identifier: highTech
+DEBUG: identifier from identifier: CPP_highTech
 DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: highGradeStudents
-DEBUG: identifier from identifier: CPP_highGradeStudents
+DEBUG: identifier from identifier: gaming
+DEBUG: identifier from identifier: CPP_gaming
 DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: lowGradeStudents
-DEBUG: identifier from identifier: CPP_lowGradeStudents
+DEBUG: Outputting collection declaration for the following identifiers: CPP_highTech,CPP_gaming
+DEBUG: identifier from identifier: software
+DEBUG: identifier from identifier: CPP_software
 DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: avgGradeStudents
-DEBUG: identifier from identifier: CPP_avgGradeStudents
+DEBUG: identifier from identifier: hardware
+DEBUG: identifier from identifier: CPP_hardware
 DEBUG: current statement in identifier: 
-DEBUG: Outputting collection declaration for the following identifiers: CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents
-DEBUG: identifier from identifier: grades
-DEBUG: identifier from identifier: CPP_grades
+DEBUG: identifier from identifier: industrial
+DEBUG: identifier from identifier: CPP_industrial
 DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: gradesHigh
-DEBUG: identifier from identifier: CPP_gradesHigh
-DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: grd
-DEBUG: identifier from identifier: CPP_grd
-DEBUG: current statement in identifier: 
-DEBUG: Outputting int declaration
-DEBUG: Identifiers from assign: CPP_grd
-DEBUG: identifier from identifier: class
-DEBUG: identifier from identifier: CPP_class
+DEBUG: Outputting collection declaration for the following identifiers: CPP_software,CPP_hardware,CPP_industrial
+DEBUG: identifier from identifier: highTech
+DEBUG: identifier from identifier: CPP_highTech
 DEBUG: current statement in identifier: 
 DEBUG: Outputting assignment statement with expression from statement
-DEBUG: identifier from identifier: gradesHigh
-DEBUG: identifier from identifier: CPP_gradesHigh
+DEBUG: identifier from identifier: highTech
+DEBUG: identifier from identifier: CPP_highTech
 DEBUG: current statement in identifier: 
-DEBUG: Outputting assignment statement with expression from statement
-DEBUG: identifier from identifier: highGradeStudents
-DEBUG: identifier from identifier: CPP_highGradeStudents
+DEBUG: identifier from identifier: highTech
+DEBUG: identifier from identifier: CPP_highTech
 DEBUG: current statement in identifier: 
-DEBUG: Outputting assignment statement with expression from statement
-DEBUG: identifier from identifier: student
-DEBUG: identifier from identifier: CPP_student
-DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: class
-DEBUG: identifier from identifier: CPP_class
-DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: student
-DEBUG: identifier from identifier: CPP_student
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_student
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Checking if CPP_student is a set or collection
-DEBUG: Output string_lteral,expression: "Grade for:" CPP_student
-DEBUG: identifier from identifier: grd
-DEBUG: identifier from identifier: CPP_grd
-DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: grades
-DEBUG: identifier from identifier: CPP_grades
-DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: grades
-DEBUG: identifier from identifier: CPP_grades
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_grades
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: identifier from identifier: grd
-DEBUG: identifier from identifier: CPP_grd
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_grd
+DEBUG: identifier from expression: CPP_highTech
 DEBUG: statement from expression at the moment: 
 DEBUG: statement from expression at the moment: 
 DEBUG: Outputting addition expression
-DEBUG: Checking if CPP_grades is a set or collection
-DEBUG: Symbol type: 263
-DEBUG: Checking if CPP_grd is a set or collection
-DEBUG: Symbol type: 261
 DEBUG: Outputting assignment statement with expression from statement
-DEBUG: Checking if CPP_grades is a set or collection
-DEBUG: Symbol type: 263
+DEBUG: identifier from identifier: gaming
+DEBUG: identifier from identifier: CPP_gaming
+DEBUG: current statement in identifier: 
+DEBUG: Outputting assignment statement with expression from statement
+DEBUG: identifier from identifier: software
+DEBUG: identifier from identifier: CPP_software
+DEBUG: current statement in identifier: 
+DEBUG: Outputting assignment statement with expression from statement
+DEBUG: identifier from identifier: hardware
+DEBUG: identifier from identifier: CPP_hardware
+DEBUG: current statement in identifier: 
+DEBUG: Outputting assignment statement with expression from statement
+DEBUG: identifier from identifier: industrial
+DEBUG: identifier from identifier: CPP_industrial
+DEBUG: current statement in identifier: 
+DEBUG: Outputting assignment statement with expression from statement
+DEBUG: identifier from identifier: software
+DEBUG: identifier from identifier: CPP_software
+DEBUG: current statement in identifier: 
+DEBUG: identifier from expression: CPP_software
+DEBUG: statement from expression at the moment: 
+DEBUG: statement from expression at the moment: 
+DEBUG: identifier from identifier: hardware
+DEBUG: identifier from identifier: CPP_hardware
+DEBUG: current statement in identifier: 
+DEBUG: identifier from expression: CPP_hardware
+DEBUG: statement from expression at the moment: 
+DEBUG: statement from expression at the moment: 
+DEBUG: Outputting intersection expression
+DEBUG: Checking if intersection(CPP_software, CPP_hardware) is a set or collection
+DEBUG: Output string_lteral,expression: "Companies that sell hardware & software:" intersection(CPP_software, CPP_hardware)
+DEBUG: identifier from identifier: highSW
+DEBUG: identifier from identifier: CPP_highSW
+DEBUG: current statement in identifier: 
+DEBUG: Outputting collection declaration for the following identifiers: CPP_highSW
+DEBUG: identifier from identifier: highSW
+DEBUG: identifier from identifier: CPP_highSW
+DEBUG: current statement in identifier: 
+DEBUG: identifier from identifier: software
+DEBUG: identifier from identifier: CPP_software
+DEBUG: current statement in identifier: 
+DEBUG: identifier from expression: CPP_software
+DEBUG: statement from expression at the moment: 
+DEBUG: statement from expression at the moment: 
+DEBUG: identifier from identifier: highTech
+DEBUG: identifier from identifier: CPP_highTech
+DEBUG: current statement in identifier: 
+DEBUG: identifier from expression: CPP_highTech
+DEBUG: statement from expression at the moment: 
+DEBUG: statement from expression at the moment: 
+DEBUG: Outputting intersection expression
+DEBUG: Outputting assignment statement with expression from statement
+DEBUG: Checking if CPP_highSW is a set or collection
+DEBUG: Symbol type: 264
 DEBUG: Outputting set or collection range insertion
-DEBUG: Assign identifier: CPP_grades
-DEBUG: Expression: (CPP_grades + CPP_grd)
-DEBUG: Generated nested insertion: CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+DEBUG: Generated nested insertion: CPP_highSW.insert(CPP_highSW.begin(), CPP_highSW.end());
 
-DEBUG: identifier from identifier: grd
-DEBUG: identifier from identifier: CPP_grd
+DEBUG: identifier from identifier: highSW
+DEBUG: identifier from identifier: CPP_highSW
 DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_grd
+DEBUG: identifier from expression: CPP_highSW
 DEBUG: statement from expression at the moment: 
 DEBUG: statement from expression at the moment: 
-DEBUG: identifier from identifier: gradesHigh
-DEBUG: identifier from identifier: CPP_gradesHigh
+DEBUG: identifier from identifier: software
+DEBUG: identifier from identifier: CPP_software
 DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: gradesHigh
-DEBUG: identifier from identifier: CPP_gradesHigh
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_gradesHigh
+DEBUG: identifier from expression: CPP_software
 DEBUG: statement from expression at the moment: 
 DEBUG: statement from expression at the moment: 
-DEBUG: identifier from identifier: grd
-DEBUG: identifier from identifier: CPP_grd
+DEBUG: Outputting equality condition
+DEBUG: identifier from identifier: highSW
+DEBUG: identifier from identifier: CPP_highSW
 DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_grd
+DEBUG: identifier from expression: CPP_highSW
+DEBUG: statement from expression at the moment: 
+DEBUG: statement from expression at the moment: 
+DEBUG: Checking if CPP_highSW is a set or collection
+DEBUG: Symbol type: 264
+DEBUG: Output string_lteral,expression: "All software companies are high-tech companies:" CPP_highSW
+DEBUG: identifier from identifier: highSW
+DEBUG: identifier from identifier: CPP_highSW
+DEBUG: current statement in identifier: 
+DEBUG: identifier from expression: CPP_highSW
+DEBUG: statement from expression at the moment: 
+DEBUG: statement from expression at the moment: 
+DEBUG: Checking if CPP_highSW is a set or collection
+DEBUG: Symbol type: 264
+DEBUG: Output string_lteral,expression: "Not all software companies are high-tech companies:" CPP_highSW
+DEBUG: Outputting if statement with else statement
+DEBUG: identifier from identifier: highSW
+DEBUG: identifier from identifier: CPP_highSW
+DEBUG: current statement in identifier: 
+DEBUG: identifier from identifier: highSW
+DEBUG: identifier from identifier: CPP_highSW
+DEBUG: current statement in identifier: 
+DEBUG: identifier from expression: CPP_highSW
 DEBUG: statement from expression at the moment: 
 DEBUG: statement from expression at the moment: 
 DEBUG: Outputting addition expression
-DEBUG: Checking if CPP_gradesHigh is a set or collection
-DEBUG: Symbol type: 263
-DEBUG: Checking if CPP_grd is a set or collection
-DEBUG: Symbol type: 261
+DEBUG: Checking if CPP_highSW is a set or collection
+DEBUG: Symbol type: 264
+DEBUG: Checking if "Playtika" is a set or collection
 DEBUG: Outputting assignment statement with expression from statement
-DEBUG: Checking if CPP_gradesHigh is a set or collection
-DEBUG: Symbol type: 263
-DEBUG: Outputting set or collection range insertion
-DEBUG: Assign identifier: CPP_gradesHigh
-DEBUG: Expression: (CPP_gradesHigh + CPP_grd)
-DEBUG: Generated nested insertion: CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
-
-DEBUG: identifier from identifier: highGradeStudents
-DEBUG: identifier from identifier: CPP_highGradeStudents
+DEBUG: identifier from identifier: highSW
+DEBUG: identifier from identifier: CPP_highSW
 DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: highGradeStudents
-DEBUG: identifier from identifier: CPP_highGradeStudents
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_highGradeStudents
+DEBUG: identifier from expression: CPP_highSW
 DEBUG: statement from expression at the moment: 
 DEBUG: statement from expression at the moment: 
-DEBUG: identifier from identifier: student
-DEBUG: identifier from identifier: CPP_student
+DEBUG: identifier from identifier: software
+DEBUG: identifier from identifier: CPP_software
 DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_student
+DEBUG: identifier from expression: CPP_software
+DEBUG: statement from expression at the moment: 
+DEBUG: statement from expression at the moment: 
+DEBUG: Outputting equality condition
+DEBUG: identifier from identifier: highSW
+DEBUG: identifier from identifier: CPP_highSW
+DEBUG: current statement in identifier: 
+DEBUG: identifier from expression: CPP_highSW
+DEBUG: statement from expression at the moment: 
+DEBUG: statement from expression at the moment: 
+DEBUG: Checking if CPP_highSW is a set or collection
+DEBUG: Symbol type: 264
+DEBUG: Output string_lteral,expression: "Now all software companies are high-tech companies:" CPP_highSW
+DEBUG: identifier from identifier: highSW
+DEBUG: identifier from identifier: CPP_highSW
+DEBUG: current statement in identifier: 
+DEBUG: identifier from expression: CPP_highSW
+DEBUG: statement from expression at the moment: 
+DEBUG: statement from expression at the moment: 
+DEBUG: Checking if CPP_highSW is a set or collection
+DEBUG: Symbol type: 264
+DEBUG: Output string_lteral,expression: "Not all software companies are high-tech companies:" CPP_highSW
+DEBUG: Outputting if statement with else statement
+DEBUG: identifier from identifier: software
+DEBUG: identifier from identifier: CPP_software
+DEBUG: current statement in identifier: 
+DEBUG: identifier from expression: CPP_software
+DEBUG: statement from expression at the moment: 
+DEBUG: statement from expression at the moment: 
+DEBUG: identifier from identifier: hardware
+DEBUG: identifier from identifier: CPP_hardware
+DEBUG: current statement in identifier: 
+DEBUG: identifier from expression: CPP_hardware
 DEBUG: statement from expression at the moment: 
 DEBUG: statement from expression at the moment: 
 DEBUG: Outputting addition expression
-DEBUG: Checking if CPP_highGradeStudents is a set or collection
+DEBUG: Checking if CPP_software is a set or collection
 DEBUG: Symbol type: 264
-DEBUG: Checking if CPP_student is a set or collection
-DEBUG: Outputting assignment statement with expression from statement
-DEBUG: Checking if CPP_highGradeStudents is a set or collection
+DEBUG: Checking if CPP_hardware is a set or collection
 DEBUG: Symbol type: 264
-DEBUG: Outputting set or collection range insertion
-DEBUG: Assign identifier: CPP_highGradeStudents
-DEBUG: Expression: (CPP_highGradeStudents + CPP_student)
-DEBUG: Generated nested insertion: CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
-
-DEBUG: Outputting if statement with single statement
-DEBUG: Parsing for loop
-DEBUG: Iterator: CPP_student
-DEBUG: Set/Collection: CPP_class
-DEBUG: Body: std::cout << "Grade for:" << CPP_student << std::endl;
-std::cout << ">";
-std::cin >> CPP_grd;
-CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
-if ((CPP_grd >= 90)) {
-CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
-CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
-}
-
-DEBUG: Generated for block: for (const auto& CPP_student : CPP_class) {
-std::cout << "Grade for:" << CPP_student << std::endl;
-std::cout << ">";
-std::cin >> CPP_grd;
-CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
-if ((CPP_grd >= 90)) {
-CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
-CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
-}
-}
-
-DEBUG: identifier from identifier: gradesHigh
-DEBUG: identifier from identifier: CPP_gradesHigh
+DEBUG: Checking if union_sets(CPP_software, CPP_hardware) is a set or collection
+DEBUG: Output string_lteral,expression: "Companies that do software or hardware:" union_sets(CPP_software, CPP_hardware)
+DEBUG: identifier from identifier: hardware
+DEBUG: identifier from identifier: CPP_hardware
 DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: gradesHigh
-DEBUG: identifier from identifier: CPP_gradesHigh
-DEBUG: current statement in identifier: 
-DEBUG: Output string literal, union: "Number of top grades:" CPP_gradesHigh
-DEBUG: identifier from identifier: gradesHigh
-DEBUG: identifier from identifier: CPP_gradesHigh
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_gradesHigh
+DEBUG: identifier from expression: CPP_hardware
 DEBUG: statement from expression at the moment: 
 DEBUG: statement from expression at the moment: 
-DEBUG: Checking if CPP_gradesHigh is a set or collection
-DEBUG: Symbol type: 263
-DEBUG: Output string_lteral,expression: "Top Grades are:" CPP_gradesHigh
-DEBUG: identifier from identifier: highGradeStudents
-DEBUG: identifier from identifier: CPP_highGradeStudents
+DEBUG: identifier from identifier: software
+DEBUG: identifier from identifier: CPP_software
 DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_highGradeStudents
+DEBUG: identifier from expression: CPP_software
 DEBUG: statement from expression at the moment: 
 DEBUG: statement from expression at the moment: 
-DEBUG: Checking if CPP_highGradeStudents is a set or collection
+DEBUG: identifier from identifier: gaming
+DEBUG: identifier from identifier: CPP_gaming
+DEBUG: current statement in identifier: 
+DEBUG: identifier from expression: CPP_gaming
+DEBUG: statement from expression at the moment: 
+DEBUG: statement from expression at the moment: 
+DEBUG: Outputting intersection expression
+DEBUG: Outputting expression in parentheses
+DEBUG: Outputting Minus expression
+DEBUG: Checking if CPP_hardware is a set or collection
 DEBUG: Symbol type: 264
-DEBUG: Output string_lteral,expression: "High Grade Students are:" CPP_highGradeStudents
-DEBUG: Outputting if statement with single statement
-DEBUG: identifier from identifier: student
-DEBUG: identifier from identifier: CPP_student
-DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: lowGradeStudents
-DEBUG: identifier from identifier: CPP_lowGradeStudents
-DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: student
-DEBUG: identifier from identifier: CPP_student
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_student
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Checking if CPP_student is a set or collection
-DEBUG: Output string_lteral,expression: "Get better next time:" CPP_student
-DEBUG: Parsing for loop
-DEBUG: Iterator: CPP_student
-DEBUG: Set/Collection: CPP_lowGradeStudents
-DEBUG: Body: std::cout << "Get better next time:" << CPP_student << std::endl;
-
-DEBUG: Generated for block: for (const auto& CPP_student : CPP_lowGradeStudents) {
-std::cout << "Get better next time:" << CPP_student << std::endl;
-}
-
-DEBUG: identifier from identifier: avgGradeStudents
-DEBUG: identifier from identifier: CPP_avgGradeStudents
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_avgGradeStudents
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Checking if CPP_avgGradeStudents is a set or collection
-DEBUG: Symbol type: 264
-DEBUG: Output string_lteral,expression: "Students with good grades:" CPP_avgGradeStudents
+DEBUG: Checking if (intersection(CPP_software, CPP_gaming)) is a set or collection
+DEBUG: Outputting minus expression not collection
+DEBUG: Expression: (intersection(CPP_software, CPP_gaming))
+DEBUG: Checking if set_difference(CPP_hardware, (intersection(CPP_software, CPP_gaming))) is a set or collection
+DEBUG: Output string_lteral,expression: "Companies that sell Hardware but not Gaming Software:" set_difference(CPP_hardware, (intersection(CPP_software, CPP_gaming)))
