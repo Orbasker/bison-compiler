@@ -77,7 +77,7 @@ declaration:
     INT identifiers SEMICOLON { 
         DEBUG_PRINT("Outputting int declaration");
         DEBUG_PRINT("Identifiers from assign: %s", $2);
-        asprintf(&$$, "int %s;\n", $2); 
+        asprintf(&$$, "int %s", $2); 
         char* temp = strtok($2, ",");
         while (temp != NULL) {
             putsym(temp, INT);  // Add to symbol table
@@ -104,6 +104,7 @@ declaration:
         free($2); 
     }
     | COLLECTION identifiers SEMICOLON { 
+        DEBUG_PRINT("Outputting collection declaration for the following identifiers: %s", $2);
         asprintf(&$$, "std::set<std::string> %s;\n", $2); 
         char* temp = strtok($2, ",");
         while (temp != NULL) {
@@ -146,20 +147,35 @@ identifier:
 
 statements:
     /* empty */ { $$ = strdup(""); }
-    | statements statement { 
+    | statements statement {
         DEBUG_PRINT("Before concatenation: %s", statementsL);
-        char* temp; 
-        asprintf(&temp, "%s%s", statementsL, $2); 
+        
+        // Accumulate the statements
+        char* temp;
+        asprintf(&temp, "%s%s", statementsL, $2);
+        
         DEBUG_PRINT("After concatenation: %s", temp);
-        free(statementsL); 
-        free($2); 
-        statementsL = temp; 
+        
+        // Update statementsL to accumulate the generated code
+        free(statementsL);
+        statementsL = temp;
+        
+        // Pass along the accumulated statements
+        $$ = strdup(statementsL);
+        
+        free($2);  // Free the current statement since it's already added to statementsL
     }
     ;
 
 
 statement:
-    declaration { 
+    LBRACE statements RBRACE {  
+        char* temp;
+        asprintf(&temp, "%s", $2);
+        free($2);
+        $$ = temp;
+    }
+    | declaration { 
         asprintf(&$$, "%s;\n", $1); 
         free($1);
     } 
@@ -240,7 +256,8 @@ statement:
     | IF LPAREN condition RPAREN LBRACE statements RBRACE {
         DEBUG_PRINT("Outputting if statement with multiple statements");
         DEBUG_PRINT("Condition: %s", $3);
-        DEBUG_PRINT("Statements: %s", $6);
+        // DEBUG_PRINT("Statements: %s", $$);
+        DEBUG_PRINT("Statements from statment: %s", $6);
 
         char* if_block;
         asprintf(&if_block, "if (%s) {\n%s}\n", $3, $6);
@@ -275,11 +292,54 @@ statement:
         free($2); 
         free($4); 
     }
-    | FOR identifier COLON identifier LBRACE statements RBRACE { 
-        asprintf(&$$, "for (const auto& %s : %s) {\n%s}\n", $2, $4, $6); 
-        free($2); 
-        free($4); 
-        free($6); 
+    | FOR LPAREN identifier COLON identifier RPAREN statement {
+        DEBUG_PRINT("Parsing for loop");
+        DEBUG_PRINT("Iterator: %s", $3);
+        DEBUG_PRINT("Set/Collection: %s", $5);
+        DEBUG_PRINT("Body: %s", $7);
+        
+        char* for_block;
+        asprintf(&for_block, "for (const auto& %s : %s) {\n%s}\n", $3, $5, $7);
+        
+        DEBUG_PRINT("Generated for block: %s", for_block);
+        
+        $$ = for_block;
+        
+        free($3);
+        free($5);
+        free($7);
+    }
+    | FOR LPAREN NUMBER COLON NUMBER RPAREN statement {
+        DEBUG_PRINT("Parsing for loop with number range");
+        DEBUG_PRINT("Start: %d", $3);
+        DEBUG_PRINT("End: %d", $5);
+        DEBUG_PRINT("Body: %s", $7);
+        
+        char* for_block;
+        asprintf(&for_block, "for (int CPP_i = %d; CPP_i <= %d; CPP_i++) {\n%s}\n", $3, $5, $7);
+        
+        DEBUG_PRINT("Generated for block: %s", for_block);
+        
+        $$ = for_block;
+        
+        // Only free the statement, not the integer values
+        free($7);
+    }
+    | FOR LPAREN NUMBER COLON identifier RPAREN LBRACE statements RBRACE {
+        DEBUG_PRINT("Parsing for loop with number range and identifier");
+        DEBUG_PRINT("Start: %d", $3);
+        DEBUG_PRINT("End: %s", $5);
+        DEBUG_PRINT("Body: %s", $8);
+        
+        char* for_block;
+        asprintf(&for_block, "for (int CPP_i = %d; CPP_i <= %s; CPP_i++) {\n%s}\n", $3, $5, $8);
+        
+        DEBUG_PRINT("Generated for block: %s", for_block);
+        
+        $$ = for_block;
+        
+        free($5);
+        free($8);
     }
     | identifier ASSIGN expression SEMICOLON { 
         DEBUG_PRINT("Outputting assignment statement with expression from statement");
@@ -301,8 +361,24 @@ statement:
             // Case 3: Direct assignment of a set/collection
             asprintf(&$$, "%s.insert(%s);\n", $1, $3);
         } else {
+            if (isSetOrCollection($1)) {
+                DEBUG_PRINT("Outputting set or collection range insertion");
+// Case 5: Inserting a range of elements from one set/collection to another
+                DEBUG_PRINT("Assign identifier: %s", $1);
+                DEBUG_PRINT("Expression: %s", $3);
+                
+                 // Generate the nested insertion statement
+                asprintf(&$$, "%s.insert(%s.begin(), %s.end());\n",
+                        $1, $1, $1, $3);
+
+                DEBUG_PRINT("Generated nested insertion: %s", $$);
+
+            } else {
+                DEBUG_PRINT("Outputting simple assignment");
+                // Case 4: Simple assignment
+                asprintf(&$$, "%s = %s;\n", $1, $3); 
+            }
             // Case 4: Simple assignment
-            asprintf(&$$, "%s = %s;\n", $1, $3); 
         }
         free($1);
         free($3);
@@ -344,11 +420,12 @@ expression:
         free($3); 
     }
     | expression PLUS expression {
+        DEBUG_PRINT("Outputting addition expression");
         if (strstr($1, "{") != NULL || strstr($3, "{") != NULL) {
             asprintf(&$$, "%s + %s", $1, $3);
         } 
-        else if (strstr($3, "{") != NULL) {
-            asprintf(&$$, "%s.insert(%s)", $1, $3);
+        else if (isSetOrCollection($1) && isSetOrCollection($3)) {
+            asprintf(&$$, "union_sets(%s, %s)", $1, $3);
         }
         else {
             asprintf(&$$, "(%s + %s)", $1, $3);
@@ -357,6 +434,7 @@ expression:
         free($3);
     }
     | expression MINUS expression { 
+        DEBUG_PRINT("Outputting subtraction expression");
          char* temp; 
         asprintf(&temp, "intersection(%s, %s)", $1, $3); 
         free($1); 
@@ -364,6 +442,7 @@ expression:
         $$ = temp; 
     }
     | expression MUL expression { 
+        DEBUG_PRINT("Outputting multiplication expression");
         char* temp; 
         asprintf(&temp, "(%s * %s)", $1, $3); 
         free($1); 
@@ -371,6 +450,7 @@ expression:
         $$ = temp; 
     }
     | expression DIV expression { 
+        DEBUG_PRINT("Outputting division expression");
         char* temp; 
         asprintf(&temp, "(%s / %s)", $1, $3); 
         free($1); 
@@ -378,6 +458,7 @@ expression:
         $$ = temp; 
     }
     | expression INTERSECT expression { 
+        DEBUG_PRINT("Outputting intersection expression");
         char* temp; 
         asprintf(&temp, "intersection(%s, %s)", $1, $3); 
         free($1); 
@@ -385,6 +466,7 @@ expression:
         $$ = temp; 
     }
     | expression UNION expression { 
+        DEBUG_PRINT("Outputting union expression");
         char* temp; 
         asprintf(&temp, "union_sets(%s, %s)", $1, $3); 
         free($1); 
@@ -392,6 +474,7 @@ expression:
         $$ = temp; 
     }
     | LPAREN expression RPAREN { 
+        DEBUG_PRINT("Outputting expression in parentheses");
         char* temp; 
         asprintf(&temp, "(%s)", $2); 
         free($2); 
@@ -407,6 +490,7 @@ condition:
         $$ = temp;
     }
     | expression EQ expression { 
+        DEBUG_PRINT("Outputting equality condition");
         char* temp; 
         asprintf(&temp, "(%s == %s)", $1, $3); 
         free($1); 

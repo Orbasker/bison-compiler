@@ -1,65 +1,1051 @@
-DEBUG: identifier from identifier: grd
-DEBUG: identifier from identifier: CPP_grd
+DEBUG: identifier from identifier: class
+DEBUG: identifier from identifier: CPP_class
 DEBUG: current statement in identifier: 
-DEBUG: Outputting int declaration
-DEBUG: Identifiers from assign: CPP_grd
+DEBUG: identifier from identifier: highGradeStudents
+DEBUG: identifier from identifier: CPP_highGradeStudents
+DEBUG: current statement in identifier: 
+DEBUG: identifier from identifier: lowGradeStudents
+DEBUG: identifier from identifier: CPP_lowGradeStudents
+DEBUG: current statement in identifier: 
+DEBUG: identifier from identifier: avgGradeStudents
+DEBUG: identifier from identifier: CPP_avgGradeStudents
+DEBUG: current statement in identifier: 
+DEBUG: Outputting collection declaration for the following identifiers: CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents
 DEBUG: Before concatenation: 
-DEBUG: After concatenation: int CPP_grd;
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+
+DEBUG: identifier from identifier: grades
+DEBUG: identifier from identifier: CPP_grades
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+
+DEBUG: identifier from identifier: gradesHigh
+DEBUG: identifier from identifier: CPP_gradesHigh
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
 ;
 
 DEBUG: identifier from identifier: grd
 DEBUG: identifier from identifier: CPP_grd
-DEBUG: current statement in identifier: int CPP_grd;
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+
+DEBUG: Outputting int declaration
+DEBUG: Identifiers from assign: CPP_grd
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+
+DEBUG: identifier from identifier: student
+DEBUG: identifier from identifier: CPP_student
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+
+DEBUG: identifier from identifier: class
+DEBUG: identifier from identifier: CPP_class
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
 ;
 
 DEBUG: Outputting assignment statement with expression from statement
-DEBUG: Before concatenation: int CPP_grd;
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
 ;
 
-DEBUG: After concatenation: int CPP_grd;
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
 ;
-CPP_grd = 90;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+
+DEBUG: identifier from identifier: gradesHigh
+DEBUG: identifier from identifier: CPP_gradesHigh
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+
+DEBUG: Outputting assignment statement with expression from statement
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+
+DEBUG: identifier from identifier: highGradeStudents
+DEBUG: identifier from identifier: CPP_highGradeStudents
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+
+DEBUG: Outputting assignment statement with expression from statement
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+
+DEBUG: identifier from identifier: student
+DEBUG: identifier from identifier: CPP_student
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+
+DEBUG: identifier from identifier: class
+DEBUG: identifier from identifier: CPP_class
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+
+DEBUG: identifier from identifier: student
+DEBUG: identifier from identifier: CPP_student
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+
+DEBUG: identifier from expression: CPP_student
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+
+DEBUG: Checking if CPP_student is a set or collection
+DEBUG: Symbol type: 262
+DEBUG: Output string_lteral,expression: "Grade for:" CPP_student
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
 
 DEBUG: identifier from identifier: grd
 DEBUG: identifier from identifier: CPP_grd
-DEBUG: current statement in identifier: int CPP_grd;
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
 ;
-CPP_grd = 90;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+
+DEBUG: identifier from identifier: grades
+DEBUG: identifier from identifier: CPP_grades
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+
+DEBUG: identifier from identifier: grades
+DEBUG: identifier from identifier: CPP_grades
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+
+DEBUG: identifier from expression: CPP_grades
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+
+DEBUG: identifier from identifier: grd
+DEBUG: identifier from identifier: CPP_grd
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
 
 DEBUG: identifier from expression: CPP_grd
-DEBUG: statement from expression at the moment: int CPP_grd;
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
 ;
-CPP_grd = 90;
-
-DEBUG: statement from expression at the moment: int CPP_grd;
+std::set<int> CPP_grades,CPP_gradesHigh;
 ;
-CPP_grd = 90;
-
-DEBUG: Output string literal: "alright"
-DEBUG: Before concatenation: int CPP_grd;
+int CPP_grd;
+std::string CPP_student;
 ;
-CPP_grd = 90;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
 
-DEBUG: After concatenation: int CPP_grd;
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
 ;
-CPP_grd = 90;
-std::cout << "alright" << std::endl;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
 
-DEBUG: Outputting if statement with multiple statements
-DEBUG: Condition: (CPP_grd >= 90)
-DEBUG: Statements: 
-DEBUG: Generated if block: if ((CPP_grd >= 90)) {
+DEBUG: Outputting addition expression
+DEBUG: Checking if CPP_grades is a set or collection
+DEBUG: Symbol type: 263
+DEBUG: Checking if CPP_grd is a set or collection
+DEBUG: Symbol type: 261
+DEBUG: Outputting assignment statement with expression from statement
+DEBUG: Checking if CPP_grades is a set or collection
+DEBUG: Symbol type: 263
+DEBUG: Outputting set or collection range insertion
+DEBUG: Assign identifier: CPP_grades
+DEBUG: Expression: (CPP_grades + CPP_grd)
+DEBUG: Generated nested insertion: CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: identifier from identifier: grd
+DEBUG: identifier from identifier: CPP_grd
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: identifier from expression: CPP_grd
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: identifier from identifier: gradesHigh
+DEBUG: identifier from identifier: CPP_gradesHigh
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: identifier from identifier: gradesHigh
+DEBUG: identifier from identifier: CPP_gradesHigh
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: identifier from expression: CPP_gradesHigh
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: identifier from identifier: grd
+DEBUG: identifier from identifier: CPP_grd
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: identifier from expression: CPP_grd
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: Outputting addition expression
+DEBUG: Checking if CPP_gradesHigh is a set or collection
+DEBUG: Symbol type: 263
+DEBUG: Checking if CPP_grd is a set or collection
+DEBUG: Symbol type: 261
+DEBUG: Outputting assignment statement with expression from statement
+DEBUG: Checking if CPP_gradesHigh is a set or collection
+DEBUG: Symbol type: 263
+DEBUG: Outputting set or collection range insertion
+DEBUG: Assign identifier: CPP_gradesHigh
+DEBUG: Expression: (CPP_gradesHigh + CPP_grd)
+DEBUG: Generated nested insertion: CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+
+DEBUG: identifier from identifier: highGradeStudents
+DEBUG: identifier from identifier: CPP_highGradeStudents
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+
+DEBUG: identifier from identifier: highGradeStudents
+DEBUG: identifier from identifier: CPP_highGradeStudents
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+
+DEBUG: identifier from expression: CPP_highGradeStudents
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+
+DEBUG: identifier from identifier: student
+DEBUG: identifier from identifier: CPP_student
+DEBUG: current statement in identifier: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+
+DEBUG: identifier from expression: CPP_student
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+
+DEBUG: statement from expression at the moment: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+
+DEBUG: Outputting addition expression
+DEBUG: Checking if CPP_highGradeStudents is a set or collection
+DEBUG: Symbol type: 264
+DEBUG: Checking if CPP_student is a set or collection
+DEBUG: Symbol type: 262
+DEBUG: Outputting assignment statement with expression from statement
+DEBUG: Checking if CPP_highGradeStudents is a set or collection
+DEBUG: Symbol type: 264
+DEBUG: Outputting set or collection range insertion
+DEBUG: Assign identifier: CPP_highGradeStudents
+DEBUG: Expression: (CPP_highGradeStudents + CPP_student)
+DEBUG: Generated nested insertion: CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+
+DEBUG: Outputting if statement with single statement
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+if ((CPP_grd >= 90)) {
+std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
 }
 
-DEBUG: Before concatenation: int CPP_grd;
+DEBUG: Parsing for loop
+DEBUG: Iterator: CPP_student
+DEBUG: Set/Collection: CPP_class
+DEBUG: Body: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
 ;
-CPP_grd = 90;
-std::cout << "alright" << std::endl;
-
-DEBUG: After concatenation: int CPP_grd;
+std::set<int> CPP_grades,CPP_gradesHigh;
 ;
-CPP_grd = 90;
-std::cout << "alright" << std::endl;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
 if ((CPP_grd >= 90)) {
+std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+}
+
+DEBUG: Generated for block: for (const auto& CPP_student : CPP_class) {
+std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+if ((CPP_grd >= 90)) {
+std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+}
+}
+
+DEBUG: Before concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+if ((CPP_grd >= 90)) {
+std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+}
+
+DEBUG: After concatenation: std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+if ((CPP_grd >= 90)) {
+std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+}
+for (const auto& CPP_student : CPP_class) {
+std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+if ((CPP_grd >= 90)) {
+std::set<std::string> CPP_class,CPP_highGradeStudents,CPP_lowGradeStudents,CPP_avgGradeStudents;
+;
+std::set<int> CPP_grades,CPP_gradesHigh;
+;
+int CPP_grd;
+std::string CPP_student;
+;
+CPP_class.insert({"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz", "Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"});
+CPP_gradesHigh.insert({});
+CPP_highGradeStudents.insert({});
+std::cout << "Grade for:" << CPP_student << std::endl;
+std::cout << ">";
+std::cin >> CPP_grd;
+CPP_grades.insert(CPP_grades.begin(), CPP_grades.end());
+CPP_gradesHigh.insert(CPP_gradesHigh.begin(), CPP_gradesHigh.end());
+CPP_highGradeStudents.insert(CPP_highGradeStudents.begin(), CPP_highGradeStudents.end());
+}
 }
 
