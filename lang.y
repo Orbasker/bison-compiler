@@ -6,7 +6,6 @@
 #include <set>
 #include <algorithm>
 #include "lang.tab.h"
-#include "SyntaxTree.hpp"
 
 using namespace std;
 
@@ -71,18 +70,6 @@ int isSetOrCollection(const char* var);
 program:
     statements 
     ;
-
-
-// declarations:
-//     /* empty */ { declarations = strdup(""); }
-//     | declarations declaration { 
-//         char* temp; 
-//         asprintf(&temp, "%s%s", declarations, $2); 
-//         free(declarations); 
-//         free($2); 
-//         declarations = temp; 
-//     }
-//     ;
 
 declaration:
     INT identifiers SEMICOLON { asprintf(&$$, "int %s;\n", $2); free($2); }
@@ -156,18 +143,6 @@ statement:
             char* rightSide = strtok(NULL, "-");
             asprintf(&$$, "std::cout << %s << (%s - intersection(%s, %s)) << std::endl;\n", $2, leftSide, rightSide, rightSide);
         }
-        // else if (strstr($3, "-") != NULL && strstr($3, "&") != NULL) {
-        //     // Case: Difference and intersection together
-        //     char* leftSide = strtok($3, "-");
-        //     char* rightSide = strtok(NULL, "-");
-        //     asprintf(&$$, "std::cout << %s << (%s - intersection(%s, %s)) << std::endl;\n", $2, leftSide, rightSide, rightSide);
-        // }
-        // else if (strstr($3, "-") != NULL) {
-        //     // Case: Set difference
-        //     char* leftSide = strtok($3, "-");
-        //     char* rightSide = strtok(NULL, "-");
-        //     asprintf(&$$, "std::cout << %s << (%s - %s) << std::endl;\n", $2, leftSide, rightSide);
-        // }
         else if (strstr($3, "+") != NULL) {
             // Generate code to compute the union of sets using union_sets function
             asprintf(&$$, "std::cout << %s << union_sets%s, %s << std::endl;\n", $2, strtok($3, "+"), strtok(NULL, "+"));
@@ -206,29 +181,6 @@ statement:
         free($6);
         free($9);
     }
-    // | IF LPAREN condition RPAREN statement { 
-    //     asprintf(&$$, "if (%s) %s", $3, $5); 
-    //     free($3); 
-    //     free($5); 
-    // }
-    // | IF LPAREN condition RPAREN statement ELSE statement { 
-    //     asprintf(&$$, "if (%s) %s else %s", $3, $5, $7); 
-    //     free($3); 
-    //     free($5); 
-    //     free($7); 
-    // }
-    
-    // | IF LPAREN condition RPAREN LBRACE statements RBRACE { 
-    //     asprintf(&$$, "if (%s) {\n%s}\n", $3, $6); 
-    //     free($3); 
-    //     free($6);
-    // }
-    // | IF LPAREN condition RPAREN LBRACE statements RBRACE ELSE LBRACE statements RBRACE { 
-    //     asprintf(&$$, "if (%s) {\n%s} else {\n%s}\n", $3, $6, $10); 
-    //     free($3); 
-    //     free($6); 
-    //     free($10);
-    // }
     | WHILE condition LBRACE statements RBRACE { 
         asprintf(&$$, "while (%s) {\n%s}\n", $2, $4); 
         free($2); 
@@ -390,22 +342,6 @@ condition:
         free($3); 
         $$ = temp; 
     }
-    // | expression {
-    //     char* temp; 
-    //     asprintf(&temp, "(%s)", $1);
-    //     free($1);
-    //     $$ = temp;
-    // }
-    // | LPAREN expression RPAREN {
-    //     char* temp;
-    //     asprintf(&temp, "%s", $2);  // Just pass through the expression
-    //     free($2);
-    //     $$ = temp;
-    // }
-    // | LPAREN identifier RPAREN {
-    //     $$ = strdup($2);  // Handle a single identifier as a condition
-    // }
-    
     ;
 
 set_literal:
