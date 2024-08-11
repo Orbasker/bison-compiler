@@ -443,12 +443,26 @@ expression:
             $$ = temp;
         } else {
             DEBUG_PRINT("Outputting minus expression not collection");
-            char* temp;
-            asprintf(&temp, "(%s - %s)", $1, $3);
+            DEBUG_PRINT("Expression: %s", $3);
+            if (strchr($3, '&') != NULL) {
+                DEBUG_PRINT("Outputting minus expression with intersection");
+                char* leftSide = strtok($3, "&");
+                char* rightSide = strtok(NULL, "&");
+                asprintf(&$$, "intersection(%s, %s)", $3, leftSide, rightSide);
+            } else {
+
+                asprintf(&$$, "set_difference(%s, %s)", $1, $3);
+            }
             free($1);
             free($3);
-            $$ = temp;
         }
+                
+        //     char* temp;
+        //     asprintf(&temp, "(%s - %s)", $1, $3);
+        //     free($1);
+        //     free($3);
+        //     $$ = temp;
+        // }
     }
     | expression MUL expression { 
         DEBUG_PRINT("Outputting multiplication expression");

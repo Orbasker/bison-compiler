@@ -36,16 +36,29 @@ setlang: $(OBJS)
 
 # Define clean target to remove object files and executables
 clean:
-	rm -f $(OBJS) lex.yy.c lang.tab.c lang.tab.h setlang
+	rm -f $(OBJS) lex.yy.c lang.tab.c lang.tab.h setlang output.cpp output
 
-# Define run target to execute the compiler on example2.set
+# Define run target to execute the compiler on a given file
 run: setlang
-	./setlang example1.set
+	@echo "Running setlang on file: $(FILE)"
+	./setlang $(FILE)
 
+# Define compile_output target to compile the generated output.cpp
 compile_output: output.cpp
 	$(CC) $(CXXFLAGS) -o output output.cpp
 
+# Define run_output target to run the compiled C++ code
 run_output: compile_output
 	./output
 
+# Define compile_and_run target to compile and run the generated C++ code
 compile_and_run: compile_output run_output
+
+# Option to choose example 1 or 2 and run it
+example1: setlang
+	$(MAKE) run FILE=example1.set
+	$(MAKE) compile_and_run
+
+example2: setlang
+	$(MAKE) run FILE=example2.set
+	$(MAKE) compile_and_run
