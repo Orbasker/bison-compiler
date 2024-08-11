@@ -523,9 +523,9 @@ union yyalloc
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  13
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  57
+#define YYNRULES  58
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  131
+#define YYNSTATES  135
 
 /* YYMAXUTOK -- Last valid token kind.  */
 #define YYMAXUTOK   293
@@ -578,12 +578,12 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
-       0,    73,    73,    77,    88,    97,   106,   120,   127,   137,
-     149,   150,   172,   178,   182,   186,   191,   196,   212,   237,
-     243,   249,   256,   276,   283,   290,   295,   312,   328,   344,
-     391,   392,   393,   394,   395,   404,   422,   436,   444,   452,
-     460,   468,   476,   486,   492,   500,   507,   514,   521,   528,
-     538,   545,   546,   552,   556,   560,   564,   568
+       0,    73,    73,    80,    91,   100,   109,   123,   130,   140,
+     152,   153,   164,   170,   174,   178,   183,   189,   194,   210,
+     235,   241,   247,   254,   274,   281,   288,   293,   310,   326,
+     342,   390,   391,   392,   393,   394,   403,   421,   435,   453,
+     461,   469,   477,   485,   495,   501,   509,   516,   523,   530,
+     537,   547,   554,   555,   561,   565,   569,   573,   577
 };
 #endif
 
@@ -617,12 +617,12 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-90)
+#define YYPACT_NINF (-40)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
 
-#define YYTABLE_NINF (-44)
+#define YYTABLE_NINF (-45)
 
 #define yytable_value_is_error(Yyn) \
   0
@@ -631,20 +631,20 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int16 yypact[] =
 {
-     -90,    55,   219,   -90,   -90,   -90,   -90,    59,    59,    59,
-      59,    82,    20,    60,    90,    68,    90,     5,   100,   -90,
-      89,   -90,   293,   -90,   -90,     0,   -90,    74,    84,    91,
-      59,   253,    87,    90,     5,   -20,   287,   107,    69,   129,
-      -7,   -90,   -90,    73,    41,   -90,    19,    90,    90,    90,
-      90,    90,    90,    90,   -90,   -90,    59,   -90,   -90,   -90,
-     122,   -90,   304,   -90,    -8,    85,    90,    90,    90,    90,
-      90,    90,    90,   -90,   127,   128,   -90,   -90,   -90,   156,
-     161,   -90,   315,    17,    17,   131,   131,   -90,   -90,   -90,
-     -90,   -90,   219,   232,    35,    35,    35,    35,    35,    35,
-      35,   125,    93,    59,   -90,   -90,   -90,   -90,     5,   152,
-     -90,   136,   141,   142,   138,   219,   219,   137,   219,   160,
-     -90,   -90,   -90,   -90,   266,   172,     5,   -90,   -90,   185,
-     -90
+     -40,    29,   236,   -40,   -40,   -40,   -40,    34,    34,    34,
+      34,    49,    86,    28,    93,    44,    93,     5,    83,   -40,
+      60,   -40,    -7,   -40,   -40,   -30,   -40,    66,    79,   130,
+      34,   299,    55,    93,     5,   -20,   320,    63,    20,    97,
+      81,   -40,   -40,   129,     6,   -40,   -10,    93,    93,    93,
+      93,    93,    93,    93,   -40,   -40,    34,   -40,   -40,   -40,
+      88,    34,   -40,    51,   -40,    -8,    85,    93,    93,    93,
+      93,    93,    93,    93,   -40,    90,    95,   -40,   -40,   -40,
+     119,   125,   -40,   298,    17,    17,   139,   139,   -40,   -40,
+     -40,   -40,   114,   -40,   236,   270,    37,    37,    37,    37,
+      37,    37,    37,   142,    82,    34,   -40,   -40,   -40,   122,
+     -40,     5,   146,   -40,   132,   138,   140,   -40,   176,   236,
+     236,   141,   236,   156,   -40,   -40,   -40,   -40,   283,   189,
+       5,   -40,   -40,   223,   -40
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -652,27 +652,27 @@ static const yytype_int16 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-      10,     0,     2,     1,    30,    31,     9,     0,     0,     0,
-       0,     0,     0,     0,     0,     0,     0,    10,    53,    13,
-      34,    11,     0,    32,    33,     0,     7,     0,     0,     0,
-       0,     0,     0,     0,     0,    34,     0,     0,     0,    34,
-       0,    56,    55,     0,     0,    51,     0,     0,     0,     0,
+      10,     0,     2,     1,    31,    32,     9,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,    10,    54,    13,
+      35,    11,     0,    33,    34,     0,     7,     0,     0,     0,
+       0,     0,     0,     0,     0,    35,     0,     0,     0,    35,
+       0,    57,    56,     0,     0,    52,     0,     0,     0,     0,
        0,     0,     0,     0,    14,     3,     0,     4,     5,     6,
-       0,    16,     0,    17,    34,     0,     0,     0,     0,     0,
-       0,     0,     0,    10,     0,     0,    42,    12,    54,     0,
-       0,    50,     0,    36,    37,    38,    39,    40,    41,     8,
-      15,    18,     0,     0,    35,    44,    45,    47,    49,    46,
-      48,     0,     0,     0,    57,    52,    29,    19,    10,    20,
-      25,     0,     0,     0,     0,     0,     0,     0,     0,    12,
-      21,    27,    10,    26,     0,     0,    10,    24,    28,     0,
-      12
+       0,     0,    17,     0,    18,    35,     0,     0,     0,     0,
+       0,     0,     0,     0,    10,     0,     0,    43,    12,    55,
+       0,     0,    51,     0,    37,    38,    39,    40,    41,    42,
+       8,    15,     0,    19,     0,     0,    36,    45,    46,    48,
+      50,    47,    49,     0,     0,     0,    58,    53,    30,     0,
+      20,    10,    21,    26,     0,     0,     0,    16,     0,     0,
+       0,     0,     0,    12,    22,    28,    10,    27,     0,     0,
+      10,    25,    29,     0,    12
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int16 yypgoto[] =
 {
-     -90,   -90,   -90,    30,    -2,   -16,   -89,    -1,   165,   -90,
-     -90,   -90,   -90
+     -40,   -40,   -40,    25,    -2,   -16,   -39,    -1,   143,   -40,
+     -40,   -40,   -40
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
@@ -687,80 +687,80 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int16 yytable[] =
 {
-      20,    43,    66,   107,   109,    26,    26,    26,    26,    41,
-      32,   -43,    35,    36,    66,    40,    48,    49,    50,    51,
-      52,    53,    92,    76,    31,     6,   120,   121,    60,   123,
-      62,    64,    36,    55,    56,   127,    75,    42,    27,    28,
-      29,    20,    50,    51,    52,    53,    82,    83,    84,    85,
-      86,    87,    88,    80,    89,     3,    81,   101,    48,    49,
-      50,    51,    52,    53,     6,    94,    95,    96,    97,    98,
-      99,   100,    74,    78,     6,    79,     4,     5,     6,     7,
-       8,     9,    10,    11,    12,    13,    30,    14,    15,    33,
-      20,    20,   114,     4,     5,     6,   111,    38,     6,    20,
-     112,   113,    16,    45,    17,    77,   125,    57,    56,    18,
-     129,    47,    20,    20,    20,    93,    20,    58,    56,    16,
-      63,    34,    20,    20,    59,    56,    18,    20,     4,     5,
-       6,     7,     8,     9,    10,    11,    12,    13,    73,    14,
-      15,     4,     5,     6,     7,     8,     9,    10,    11,    12,
-      13,    66,    14,    15,    16,    90,    17,   110,    52,    53,
-     104,    18,   102,   103,   105,   115,   116,    16,   122,    17,
-     119,   117,   118,   124,    18,     4,     5,     6,     7,     8,
-       9,    10,    11,    12,    13,     0,    14,    15,     4,     5,
-       6,     7,     8,     9,    10,    11,    12,    13,    65,    14,
-      15,    16,     0,    17,   128,     0,     0,     0,    18,     0,
-       0,     0,     0,     0,    16,     0,    17,   130,     0,     0,
-       0,    18,     4,     5,     6,     7,     8,     9,    10,    11,
-      12,    13,     0,    14,    15,     4,     5,     6,     7,     8,
-       9,    10,    11,    12,    13,     0,    14,    15,    16,     0,
-      17,     0,     0,     0,     0,    18,     4,     5,     6,     0,
-       0,    16,     0,   108,     0,     0,     0,     0,    18,     4,
+      20,    43,    67,    55,    56,    26,    26,    26,    26,    41,
+      32,   -44,    35,    36,    67,    40,    48,    49,    50,    51,
+      52,    53,    94,    75,    81,     6,    54,    82,    60,     3,
+      63,    65,    36,    27,    28,    29,    76,    42,    79,     6,
+      80,    20,    50,    51,    52,    53,    83,    84,    85,    86,
+      87,    88,    89,    30,    90,   110,   112,    33,   103,    92,
+      48,    49,    50,    51,    52,    53,    96,    97,    98,    99,
+     100,   101,   102,    38,    48,    49,    50,    51,    52,    53,
+     124,   125,    47,   127,    93,   114,    45,     6,    64,   131,
+      31,     6,    20,    20,    74,   118,     4,     5,     6,    57,
+      56,    20,   115,   116,    48,    49,    50,    51,    52,    53,
+     129,    77,    58,    56,   133,    95,    20,    20,    20,    67,
+      20,    91,    16,   106,    34,   104,    20,    20,   107,    18,
+     105,    20,     4,     5,     6,     7,     8,     9,    10,    11,
+      12,    13,   109,    14,    15,     4,     5,     6,     7,     8,
+       9,    10,    11,    12,    13,   117,    14,    15,    16,   119,
+      17,    78,   120,    59,    56,    18,    52,    53,   121,   128,
+     122,    16,   126,    17,   113,     0,    66,     0,    18,     4,
        5,     6,     7,     8,     9,    10,    11,    12,    13,     0,
-      14,    15,    16,     0,    34,     0,    61,     0,     0,    18,
-       0,     0,     0,     0,     0,    16,     0,   126,     0,     0,
-       0,     0,    18,    67,    68,    69,    70,    71,    72,     0,
-      48,    49,    50,    51,    52,    53,    48,    49,    50,    51,
-      52,    53,     0,     0,     0,     0,    54,    48,    49,    50,
-      51,    52,    53,     0,     0,     0,     0,    91,    48,    49,
-      50,    51,    52,    53,     0,     0,     0,     0,   106
+      14,    15,     4,     5,     6,     7,     8,     9,    10,    11,
+      12,    13,     0,    14,    15,    16,     0,    17,   123,     0,
+       0,     0,    18,     0,     0,     0,     0,     0,    16,     0,
+      17,   132,     0,     0,     0,    18,     4,     5,     6,     7,
+       8,     9,    10,    11,    12,    13,     0,    14,    15,     4,
+       5,     6,     7,     8,     9,    10,    11,    12,    13,     0,
+      14,    15,    16,     0,    17,   134,     0,     0,     0,    18,
+       0,     0,     0,     0,     0,    16,     0,    17,     0,     0,
+       0,     0,    18,     4,     5,     6,     7,     8,     9,    10,
+      11,    12,    13,     0,    14,    15,     4,     5,     6,     7,
+       8,     9,    10,    11,    12,    13,     0,    14,    15,    16,
+       0,   111,     4,     5,     6,     0,    18,     0,     0,     0,
+       0,     0,    16,     0,   130,     0,     0,     0,     0,    18,
+       0,    48,    49,    50,    51,    52,    53,    61,    16,     0,
+      34,   108,    62,     0,     0,    18,    68,    69,    70,    71,
+      72,    73,     0,    48,    49,    50,    51,    52,    53
 };
 
 static const yytype_int16 yycheck[] =
 {
-       2,    17,    22,    92,    93,     7,     8,     9,    10,     4,
+       2,    17,    22,    33,    34,     7,     8,     9,    10,     4,
       12,    31,    14,    14,    22,    16,    23,    24,    25,    26,
-      27,    28,    30,    30,     4,     5,   115,   116,    30,   118,
-      31,    33,    33,    33,    34,   124,    38,    32,     8,     9,
-      10,    43,    25,    26,    27,    28,    47,    48,    49,    50,
-      51,    52,    53,    34,    56,     0,    37,    73,    23,    24,
-      25,    26,    27,    28,     5,    66,    67,    68,    69,    70,
-      71,    72,     3,    32,     5,    34,     3,     4,     5,     6,
-       7,     8,     9,    10,    11,    12,     4,    14,    15,    29,
-      92,    93,   108,     3,     4,     5,     3,    29,     5,   101,
-     102,   103,    29,     3,    31,    32,   122,    33,    34,    36,
-     126,    22,   114,   115,   116,    30,   118,    33,    34,    29,
-      33,    31,   124,   125,    33,    34,    36,   129,     3,     4,
-       5,     6,     7,     8,     9,    10,    11,    12,    31,    14,
-      15,     3,     4,     5,     6,     7,     8,     9,    10,    11,
-      12,    22,    14,    15,    29,    33,    31,    32,    27,    28,
-       4,    36,    35,    35,     3,    13,    30,    29,    31,    31,
-      32,    30,    30,    13,    36,     3,     4,     5,     6,     7,
-       8,     9,    10,    11,    12,    -1,    14,    15,     3,     4,
-       5,     6,     7,     8,     9,    10,    11,    12,    33,    14,
-      15,    29,    -1,    31,    32,    -1,    -1,    -1,    36,    -1,
-      -1,    -1,    -1,    -1,    29,    -1,    31,    32,    -1,    -1,
-      -1,    36,     3,     4,     5,     6,     7,     8,     9,    10,
-      11,    12,    -1,    14,    15,     3,     4,     5,     6,     7,
-       8,     9,    10,    11,    12,    -1,    14,    15,    29,    -1,
-      31,    -1,    -1,    -1,    -1,    36,     3,     4,     5,    -1,
-      -1,    29,    -1,    31,    -1,    -1,    -1,    -1,    36,     3,
+      27,    28,    30,     3,    34,     5,    33,    37,    30,     0,
+      31,    33,    33,     8,     9,    10,    38,    32,    32,     5,
+      34,    43,    25,    26,    27,    28,    47,    48,    49,    50,
+      51,    52,    53,     4,    56,    94,    95,    29,    74,    61,
+      23,    24,    25,    26,    27,    28,    67,    68,    69,    70,
+      71,    72,    73,    29,    23,    24,    25,    26,    27,    28,
+     119,   120,    22,   122,    33,     3,     3,     5,    33,   128,
+       4,     5,    94,    95,    31,   111,     3,     4,     5,    33,
+      34,   103,   104,   105,    23,    24,    25,    26,    27,    28,
+     126,    30,    33,    34,   130,    30,   118,   119,   120,    22,
+     122,    33,    29,     4,    31,    35,   128,   129,     3,    36,
+      35,   133,     3,     4,     5,     6,     7,     8,     9,    10,
+      11,    12,    28,    14,    15,     3,     4,     5,     6,     7,
+       8,     9,    10,    11,    12,    33,    14,    15,    29,    13,
+      31,    32,    30,    33,    34,    36,    27,    28,    30,    13,
+      30,    29,    31,    31,    32,    -1,    33,    -1,    36,     3,
        4,     5,     6,     7,     8,     9,    10,    11,    12,    -1,
-      14,    15,    29,    -1,    31,    -1,    33,    -1,    -1,    36,
+      14,    15,     3,     4,     5,     6,     7,     8,     9,    10,
+      11,    12,    -1,    14,    15,    29,    -1,    31,    32,    -1,
+      -1,    -1,    36,    -1,    -1,    -1,    -1,    -1,    29,    -1,
+      31,    32,    -1,    -1,    -1,    36,     3,     4,     5,     6,
+       7,     8,     9,    10,    11,    12,    -1,    14,    15,     3,
+       4,     5,     6,     7,     8,     9,    10,    11,    12,    -1,
+      14,    15,    29,    -1,    31,    32,    -1,    -1,    -1,    36,
       -1,    -1,    -1,    -1,    -1,    29,    -1,    31,    -1,    -1,
-      -1,    -1,    36,    16,    17,    18,    19,    20,    21,    -1,
-      23,    24,    25,    26,    27,    28,    23,    24,    25,    26,
-      27,    28,    -1,    -1,    -1,    -1,    33,    23,    24,    25,
-      26,    27,    28,    -1,    -1,    -1,    -1,    33,    23,    24,
-      25,    26,    27,    28,    -1,    -1,    -1,    -1,    33
+      -1,    -1,    36,     3,     4,     5,     6,     7,     8,     9,
+      10,    11,    12,    -1,    14,    15,     3,     4,     5,     6,
+       7,     8,     9,    10,    11,    12,    -1,    14,    15,    29,
+      -1,    31,     3,     4,     5,    -1,    36,    -1,    -1,    -1,
+      -1,    -1,    29,    -1,    31,    -1,    -1,    -1,    -1,    36,
+      -1,    23,    24,    25,    26,    27,    28,    28,    29,    -1,
+      31,    33,    33,    -1,    -1,    36,    16,    17,    18,    19,
+      20,    21,    -1,    23,    24,    25,    26,    27,    28
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
@@ -773,14 +773,14 @@ static const yytype_int8 yystos[] =
        4,     4,    43,    29,    31,    43,    46,    47,    29,    43,
       46,     4,    32,    44,    51,     3,    49,    22,    23,    24,
       25,    26,    27,    28,    33,    33,    34,    33,    33,    33,
-      43,    33,    46,    33,    43,    47,    22,    16,    17,    18,
-      19,    20,    21,    31,     3,    43,    30,    32,    32,    34,
-      34,    37,    46,    46,    46,    46,    46,    46,    46,    43,
-      33,    33,    30,    30,    46,    46,    46,    46,    46,    46,
-      46,    44,    35,    35,     4,     3,    33,    45,    31,    45,
-      32,     3,    43,    43,    44,    13,    30,    30,    30,    32,
-      45,    45,    31,    45,    13,    44,    31,    45,    32,    44,
-      32
+      43,    28,    33,    46,    33,    43,    47,    22,    16,    17,
+      18,    19,    20,    21,    31,     3,    43,    30,    32,    32,
+      34,    34,    37,    46,    46,    46,    46,    46,    46,    46,
+      43,    33,    43,    33,    30,    30,    46,    46,    46,    46,
+      46,    46,    46,    44,    35,    35,     4,     3,    33,    28,
+      45,    31,    45,    32,     3,    43,    43,    33,    44,    13,
+      30,    30,    30,    32,    45,    45,    31,    45,    13,    44,
+      31,    45,    32,    44,    32
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
@@ -789,20 +789,20 @@ static const yytype_int8 yyr1[] =
        0,    39,    40,    41,    41,    41,    41,    42,    42,    43,
       44,    44,    45,    45,    45,    45,    45,    45,    45,    45,
       45,    45,    45,    45,    45,    45,    45,    45,    45,    45,
-      46,    46,    46,    46,    46,    46,    46,    46,    46,    46,
-      46,    46,    46,    47,    47,    47,    47,    47,    47,    47,
-      48,    49,    49,    49,    50,    50,    51,    51
+      45,    46,    46,    46,    46,    46,    46,    46,    46,    46,
+      46,    46,    46,    46,    47,    47,    47,    47,    47,    47,
+      47,    48,    49,    49,    49,    50,    50,    51,    51
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
        0,     2,     1,     3,     3,     3,     3,     1,     3,     1,
-       0,     2,     3,     1,     2,     4,     3,     3,     4,     5,
-       5,     7,     7,    11,     9,     5,     7,     7,     9,     4,
-       1,     1,     1,     1,     1,     3,     3,     3,     3,     3,
-       3,     3,     3,     1,     3,     3,     3,     3,     3,     3,
-       3,     1,     3,     0,     3,     2,     1,     3
+       0,     2,     3,     1,     2,     4,     6,     3,     3,     4,
+       5,     5,     7,     7,    11,     9,     5,     7,     7,     9,
+       4,     1,     1,     1,     1,     1,     3,     3,     3,     3,
+       3,     3,     3,     3,     1,     3,     3,     3,     3,     3,
+       3,     3,     1,     3,     0,     3,     2,     1,     3
 };
 
 
@@ -1265,8 +1265,17 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
+  case 2: /* program: statements  */
+#line 73 "lang.y"
+               {
+        // Only here do we assign to statementsL
+        statementsL = (yyvsp[0].sval);
+    }
+#line 1275 "lang.tab.c"
+    break;
+
   case 3: /* declaration: INT identifiers SEMICOLON  */
-#line 77 "lang.y"
+#line 80 "lang.y"
                               { 
         DEBUG_PRINT("Outputting int declaration");
         DEBUG_PRINT("Identifiers from assign: %s", (yyvsp[-1].sval));
@@ -1278,11 +1287,11 @@ yyreduce:
         }
         free((yyvsp[-1].sval)); 
     }
-#line 1282 "lang.tab.c"
+#line 1291 "lang.tab.c"
     break;
 
   case 4: /* declaration: STR identifiers SEMICOLON  */
-#line 88 "lang.y"
+#line 91 "lang.y"
                                 { 
         asprintf(&(yyval.sval), "std::string %s;\n", (yyvsp[-1].sval)); 
         char* temp = strtok((yyvsp[-1].sval), ",");
@@ -1292,11 +1301,11 @@ yyreduce:
         }
         free((yyvsp[-1].sval)); 
     }
-#line 1296 "lang.tab.c"
+#line 1305 "lang.tab.c"
     break;
 
   case 5: /* declaration: SET identifiers SEMICOLON  */
-#line 97 "lang.y"
+#line 100 "lang.y"
                                 { 
         asprintf(&(yyval.sval), "std::set<int> %s;\n", (yyvsp[-1].sval)); 
         char* temp = strtok((yyvsp[-1].sval), ",");
@@ -1306,11 +1315,11 @@ yyreduce:
         }
         free((yyvsp[-1].sval)); 
     }
-#line 1310 "lang.tab.c"
+#line 1319 "lang.tab.c"
     break;
 
   case 6: /* declaration: COLLECTION identifiers SEMICOLON  */
-#line 106 "lang.y"
+#line 109 "lang.y"
                                        { 
         DEBUG_PRINT("Outputting collection declaration for the following identifiers: %s", (yyvsp[-1].sval));
         asprintf(&(yyval.sval), "std::set<std::string> %s;\n", (yyvsp[-1].sval)); 
@@ -1321,11 +1330,11 @@ yyreduce:
         }
         free((yyvsp[-1].sval)); 
     }
-#line 1325 "lang.tab.c"
+#line 1334 "lang.tab.c"
     break;
 
   case 7: /* identifiers: identifier  */
-#line 120 "lang.y"
+#line 123 "lang.y"
                { 
         char* temp;
         asprintf(&temp, "%s", (yyvsp[0].sval));
@@ -1333,11 +1342,11 @@ yyreduce:
         (yyval.sval) = temp;
 
      }
-#line 1337 "lang.tab.c"
+#line 1346 "lang.tab.c"
     break;
 
   case 8: /* identifiers: identifiers COMMA identifier  */
-#line 127 "lang.y"
+#line 130 "lang.y"
                                    { 
         char* temp; 
         asprintf(&temp, "%s,%s", (yyvsp[-2].sval), (yyvsp[0].sval)); 
@@ -1345,11 +1354,11 @@ yyreduce:
         free((yyvsp[0].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1349 "lang.tab.c"
+#line 1358 "lang.tab.c"
     break;
 
   case 9: /* identifier: IDENTIFIER  */
-#line 137 "lang.y"
+#line 140 "lang.y"
                { 
         DEBUG_PRINT("identifier from identifier: %s", (yyvsp[0].sval));
         char* temp;
@@ -1359,89 +1368,89 @@ yyreduce:
         DEBUG_PRINT("identifier from identifier: %s", (yyval.sval));
         DEBUG_PRINT("current statement in identifier: %s", statementsL);
      }
-#line 1363 "lang.tab.c"
+#line 1372 "lang.tab.c"
     break;
 
   case 10: /* statements: %empty  */
-#line 149 "lang.y"
+#line 152 "lang.y"
                 { (yyval.sval) = strdup(""); }
-#line 1369 "lang.tab.c"
+#line 1378 "lang.tab.c"
     break;
 
   case 11: /* statements: statements statement  */
-#line 150 "lang.y"
+#line 153 "lang.y"
                            {
-        DEBUG_PRINT("Before concatenation: %s", statementsL);
-        
-        // Accumulate the statements
         char* temp;
-        asprintf(&temp, "%s%s", statementsL, (yyvsp[0].sval));
-        
-        DEBUG_PRINT("After concatenation: %s", temp);
-        
-        // Update statementsL to accumulate the generated code
-        free(statementsL);
-        statementsL = temp;
-        
-        // Pass along the accumulated statements
-        (yyval.sval) = strdup(statementsL);
-        
-        free((yyvsp[0].sval));  // Free the current statement since it's already added to statementsL
+        asprintf(&temp, "%s%s", (yyvsp[-1].sval), (yyvsp[0].sval));
+        free((yyvsp[-1].sval));
+        free((yyvsp[0].sval));
+        (yyval.sval) = temp;
     }
-#line 1392 "lang.tab.c"
+#line 1390 "lang.tab.c"
     break;
 
   case 12: /* statement: LBRACE statements RBRACE  */
-#line 172 "lang.y"
+#line 164 "lang.y"
                              {  
         char* temp;
         asprintf(&temp, "%s", (yyvsp[-1].sval));
         free((yyvsp[-1].sval));
         (yyval.sval) = temp;
     }
-#line 1403 "lang.tab.c"
+#line 1401 "lang.tab.c"
     break;
 
   case 13: /* statement: declaration  */
-#line 178 "lang.y"
+#line 170 "lang.y"
                   { 
         asprintf(&(yyval.sval), "%s;\n", (yyvsp[0].sval)); 
         free((yyvsp[0].sval));
     }
-#line 1412 "lang.tab.c"
+#line 1410 "lang.tab.c"
     break;
 
   case 14: /* statement: expression SEMICOLON  */
-#line 182 "lang.y"
+#line 174 "lang.y"
                            { 
         asprintf(&(yyval.sval), "%s;\n", (yyvsp[-1].sval)); 
         free((yyvsp[-1].sval)); 
     }
-#line 1421 "lang.tab.c"
+#line 1419 "lang.tab.c"
     break;
 
   case 15: /* statement: INPUT STRING_LITERAL identifier SEMICOLON  */
-#line 186 "lang.y"
+#line 178 "lang.y"
                                                 { 
         asprintf(&(yyval.sval), "std::cout << %s;\nstd::cin >> %s;\n", (yyvsp[-2].sval), (yyvsp[-1].sval)); 
         free((yyvsp[-2].sval)); 
         free((yyvsp[-1].sval)); 
     }
-#line 1431 "lang.tab.c"
+#line 1429 "lang.tab.c"
     break;
 
-  case 16: /* statement: OUTPUT STRING_LITERAL SEMICOLON  */
-#line 191 "lang.y"
+  case 16: /* statement: OUTPUT STRING_LITERAL UNION identifier UNION SEMICOLON  */
+#line 183 "lang.y"
+                                                             {
+        DEBUG_PRINT("Output string literal, union: %s %s", (yyvsp[-4].sval), (yyvsp[-2].sval));
+        asprintf(&(yyval.sval), "std::cout<< %s << %s.size() << std::endl;\n", (yyvsp[-4].sval), (yyvsp[-2].sval));
+        free((yyvsp[-4].sval));
+        free((yyvsp[-2].sval));
+    }
+#line 1440 "lang.tab.c"
+    break;
+
+  case 17: /* statement: OUTPUT STRING_LITERAL SEMICOLON  */
+#line 189 "lang.y"
                                       { 
         DEBUG_PRINT("Output string literal: %s", (yyvsp[-1].sval));
         asprintf(&(yyval.sval), "std::cout << %s << std::endl;\n", (yyvsp[-1].sval)); 
         free((yyvsp[-1].sval)); 
     }
-#line 1441 "lang.tab.c"
+#line 1450 "lang.tab.c"
     break;
 
-  case 17: /* statement: OUTPUT identifier SEMICOLON  */
-#line 196 "lang.y"
+  case 18: /* statement: OUTPUT identifier SEMICOLON  */
+#line 194 "lang.y"
                                   {
         DEBUG_PRINT("Output identifier: %s", (yyvsp[-1].sval));
         int res = isSetOrCollection((yyvsp[-1].sval));
@@ -1458,11 +1467,11 @@ yyreduce:
         }
         free((yyvsp[-1].sval));
     }
-#line 1462 "lang.tab.c"
+#line 1471 "lang.tab.c"
     break;
 
-  case 18: /* statement: OUTPUT STRING_LITERAL expression SEMICOLON  */
-#line 212 "lang.y"
+  case 19: /* statement: OUTPUT STRING_LITERAL expression SEMICOLON  */
+#line 210 "lang.y"
                                                  { 
         if (isSetOrCollection((yyvsp[-1].sval))) {
             asprintf(&(yyval.sval), "std::cout << %s;\n"
@@ -1488,33 +1497,33 @@ yyreduce:
         free((yyvsp[-2].sval)); 
         free((yyvsp[-1].sval)); 
     }
-#line 1492 "lang.tab.c"
+#line 1501 "lang.tab.c"
     break;
 
-  case 19: /* statement: IF LPAREN identifier RPAREN statement  */
-#line 237 "lang.y"
+  case 20: /* statement: IF LPAREN identifier RPAREN statement  */
+#line 235 "lang.y"
                                                                   {
         DEBUG_PRINT("Outputting if statement with single statement");
         asprintf(&(yyval.sval), "if (&%s) {\n%s}\n", (yyvsp[-2].sval), (yyvsp[0].sval));
         free((yyvsp[-2].sval));
         free((yyvsp[0].sval));
     }
-#line 1503 "lang.tab.c"
+#line 1512 "lang.tab.c"
     break;
 
-  case 20: /* statement: IF LPAREN condition RPAREN statement  */
-#line 243 "lang.y"
+  case 21: /* statement: IF LPAREN condition RPAREN statement  */
+#line 241 "lang.y"
                                                                  {
         DEBUG_PRINT("Outputting if statement with single statement");
         asprintf(&(yyval.sval), "if (%s) {\n%s}\n", (yyvsp[-2].sval), (yyvsp[0].sval));
         free((yyvsp[-2].sval));
         free((yyvsp[0].sval));
     }
-#line 1514 "lang.tab.c"
+#line 1523 "lang.tab.c"
     break;
 
-  case 21: /* statement: IF LPAREN condition RPAREN statement ELSE statement  */
-#line 249 "lang.y"
+  case 22: /* statement: IF LPAREN condition RPAREN statement ELSE statement  */
+#line 247 "lang.y"
                                                           {
         DEBUG_PRINT("Outputting if statement with else statement");
         asprintf(&(yyval.sval), "if (%s) {\n%s} else {\n%s}\n", (yyvsp[-4].sval), (yyvsp[-2].sval), (yyvsp[0].sval));
@@ -1522,11 +1531,11 @@ yyreduce:
         free((yyvsp[-2].sval));
         free((yyvsp[0].sval));
     }
-#line 1526 "lang.tab.c"
+#line 1535 "lang.tab.c"
     break;
 
-  case 22: /* statement: IF LPAREN condition RPAREN LBRACE statements RBRACE  */
-#line 256 "lang.y"
+  case 23: /* statement: IF LPAREN condition RPAREN LBRACE statements RBRACE  */
+#line 254 "lang.y"
                                                           {
         DEBUG_PRINT("Outputting if statement with multiple statements");
         DEBUG_PRINT("Condition: %s", (yyvsp[-4].sval));
@@ -1542,13 +1551,13 @@ yyreduce:
         (yyval.sval) = if_block;
 
         free((yyvsp[-4].sval));
-        // free($6);
+        free((yyvsp[-1].sval));
     }
-#line 1548 "lang.tab.c"
+#line 1557 "lang.tab.c"
     break;
 
-  case 23: /* statement: IF LPAREN condition RPAREN LBRACE statements RBRACE ELSE LBRACE statements RBRACE  */
-#line 276 "lang.y"
+  case 24: /* statement: IF LPAREN condition RPAREN LBRACE statements RBRACE ELSE LBRACE statements RBRACE  */
+#line 274 "lang.y"
                                                                                         {
         DEBUG_PRINT("Outputting if statement with else block");
         asprintf(&(yyval.sval), "if (%s) {\n%s} else {\n%s}\n", (yyvsp[-8].sval), (yyvsp[-5].sval), (yyvsp[-1].sval));
@@ -1556,11 +1565,11 @@ yyreduce:
         free((yyvsp[-5].sval));
         free((yyvsp[-1].sval));
     }
-#line 1560 "lang.tab.c"
+#line 1569 "lang.tab.c"
     break;
 
-  case 24: /* statement: IF LPAREN condition RPAREN LBRACE statements RBRACE ELSE statement  */
-#line 283 "lang.y"
+  case 25: /* statement: IF LPAREN condition RPAREN LBRACE statements RBRACE ELSE statement  */
+#line 281 "lang.y"
                                                                          {
         DEBUG_PRINT("Outputting if statement with else statement");
         asprintf(&(yyval.sval), "if (%s) {\n%s} else {\n%s}\n", (yyvsp[-6].sval), (yyvsp[-3].sval), (yyvsp[0].sval));
@@ -1568,21 +1577,21 @@ yyreduce:
         free((yyvsp[-3].sval));
         free((yyvsp[0].sval));
     }
-#line 1572 "lang.tab.c"
+#line 1581 "lang.tab.c"
     break;
 
-  case 25: /* statement: WHILE condition LBRACE statements RBRACE  */
-#line 290 "lang.y"
+  case 26: /* statement: WHILE condition LBRACE statements RBRACE  */
+#line 288 "lang.y"
                                                { 
         asprintf(&(yyval.sval), "while (%s) {\n%s}\n", (yyvsp[-3].sval), (yyvsp[-1].sval)); 
         free((yyvsp[-3].sval)); 
         free((yyvsp[-1].sval)); 
     }
-#line 1582 "lang.tab.c"
+#line 1591 "lang.tab.c"
     break;
 
-  case 26: /* statement: FOR LPAREN identifier COLON identifier RPAREN statement  */
-#line 295 "lang.y"
+  case 27: /* statement: FOR LPAREN identifier COLON identifier RPAREN statement  */
+#line 293 "lang.y"
                                                               {
         DEBUG_PRINT("Parsing for loop");
         DEBUG_PRINT("Iterator: %s", (yyvsp[-4].sval));
@@ -1600,11 +1609,11 @@ yyreduce:
         free((yyvsp[-2].sval));
         free((yyvsp[0].sval));
     }
-#line 1604 "lang.tab.c"
+#line 1613 "lang.tab.c"
     break;
 
-  case 27: /* statement: FOR LPAREN NUMBER COLON NUMBER RPAREN statement  */
-#line 312 "lang.y"
+  case 28: /* statement: FOR LPAREN NUMBER COLON NUMBER RPAREN statement  */
+#line 310 "lang.y"
                                                       {
         DEBUG_PRINT("Parsing for loop with number range");
         DEBUG_PRINT("Start: %d", (yyvsp[-4].ival));
@@ -1621,11 +1630,11 @@ yyreduce:
         // Only free the statement, not the integer values
         free((yyvsp[0].sval));
     }
-#line 1625 "lang.tab.c"
+#line 1634 "lang.tab.c"
     break;
 
-  case 28: /* statement: FOR LPAREN NUMBER COLON identifier RPAREN LBRACE statements RBRACE  */
-#line 328 "lang.y"
+  case 29: /* statement: FOR LPAREN NUMBER COLON identifier RPAREN LBRACE statements RBRACE  */
+#line 326 "lang.y"
                                                                          {
         DEBUG_PRINT("Parsing for loop with number range and identifier");
         DEBUG_PRINT("Start: %d", (yyvsp[-6].ival));
@@ -1642,11 +1651,11 @@ yyreduce:
         free((yyvsp[-4].sval));
         free((yyvsp[-1].sval));
     }
-#line 1646 "lang.tab.c"
+#line 1655 "lang.tab.c"
     break;
 
-  case 29: /* statement: identifier ASSIGN expression SEMICOLON  */
-#line 344 "lang.y"
+  case 30: /* statement: identifier ASSIGN expression SEMICOLON  */
+#line 342 "lang.y"
                                              { 
         DEBUG_PRINT("Outputting assignment statement with expression from statement");
         if (strstr((yyvsp[-1].sval), "+") != NULL && strstr((yyvsp[-1].sval), "{") != NULL) {
@@ -1689,35 +1698,35 @@ yyreduce:
         free((yyvsp[-3].sval));
         free((yyvsp[-1].sval));
     }
-#line 1693 "lang.tab.c"
+#line 1702 "lang.tab.c"
     break;
 
-  case 30: /* expression: NUMBER  */
-#line 391 "lang.y"
+  case 31: /* expression: NUMBER  */
+#line 390 "lang.y"
            { asprintf(&(yyval.sval), "%d", (yyvsp[0].ival)); }
-#line 1699 "lang.tab.c"
+#line 1708 "lang.tab.c"
     break;
 
-  case 31: /* expression: STRING_LITERAL  */
-#line 392 "lang.y"
+  case 32: /* expression: STRING_LITERAL  */
+#line 391 "lang.y"
                      { (yyval.sval) = strdup((yyvsp[0].sval)); }
-#line 1705 "lang.tab.c"
+#line 1714 "lang.tab.c"
     break;
 
-  case 32: /* expression: set_literal  */
+  case 33: /* expression: set_literal  */
+#line 392 "lang.y"
+                  { (yyval.sval) = (yyvsp[0].sval); }
+#line 1720 "lang.tab.c"
+    break;
+
+  case 34: /* expression: col_literal  */
 #line 393 "lang.y"
                   { (yyval.sval) = (yyvsp[0].sval); }
-#line 1711 "lang.tab.c"
+#line 1726 "lang.tab.c"
     break;
 
-  case 33: /* expression: col_literal  */
+  case 35: /* expression: identifier  */
 #line 394 "lang.y"
-                  { (yyval.sval) = (yyvsp[0].sval); }
-#line 1717 "lang.tab.c"
-    break;
-
-  case 34: /* expression: identifier  */
-#line 395 "lang.y"
                  { 
         DEBUG_PRINT("identifier from expression: %s", (yyvsp[0].sval));
         DEBUG_PRINT("statement from expression at the moment: %s", statementsL);
@@ -1727,11 +1736,11 @@ yyreduce:
         (yyval.sval) = temp; 
         DEBUG_PRINT("statement from expression at the moment: %s", statementsL);
         }
-#line 1731 "lang.tab.c"
+#line 1740 "lang.tab.c"
     break;
 
-  case 35: /* expression: identifier ASSIGN expression  */
-#line 404 "lang.y"
+  case 36: /* expression: identifier ASSIGN expression  */
+#line 403 "lang.y"
                                    { 
         DEBUG_PRINT("Outputting assignment statement with expression from expression");
         if (strstr((yyvsp[0].sval), "+") != NULL && strstr((yyvsp[0].sval), "{") != NULL) {
@@ -1750,11 +1759,11 @@ yyreduce:
         free((yyvsp[-2].sval)); 
         free((yyvsp[0].sval)); 
     }
-#line 1754 "lang.tab.c"
+#line 1763 "lang.tab.c"
     break;
 
-  case 36: /* expression: expression PLUS expression  */
-#line 422 "lang.y"
+  case 37: /* expression: expression PLUS expression  */
+#line 421 "lang.y"
                                  {
         DEBUG_PRINT("Outputting addition expression");
         if (strstr((yyvsp[-2].sval), "{") != NULL || strstr((yyvsp[0].sval), "{") != NULL) {
@@ -1769,24 +1778,34 @@ yyreduce:
         free((yyvsp[-2].sval));
         free((yyvsp[0].sval));
     }
-#line 1773 "lang.tab.c"
+#line 1782 "lang.tab.c"
     break;
 
-  case 37: /* expression: expression MINUS expression  */
-#line 436 "lang.y"
-                                  { 
-        DEBUG_PRINT("Outputting subtraction expression");
-         char* temp; 
-        asprintf(&temp, "intersection(%s, %s)", (yyvsp[-2].sval), (yyvsp[0].sval)); 
-        free((yyvsp[-2].sval)); 
-        free((yyvsp[0].sval)); 
-        (yyval.sval) = temp; 
+  case 38: /* expression: expression MINUS expression  */
+#line 435 "lang.y"
+                                  {
+        DEBUG_PRINT("Outputting Minus expression");
+        if (isSetOrCollection((yyvsp[-2].sval)) && isSetOrCollection((yyvsp[0].sval))) {
+            DEBUG_PRINT("Outputting set difference expression collection");
+            char* temp;
+            asprintf(&temp, "set_difference(%s, %s)", (yyvsp[-2].sval), (yyvsp[0].sval));
+            free((yyvsp[-2].sval));
+            free((yyvsp[0].sval));
+            (yyval.sval) = temp;
+        } else {
+            DEBUG_PRINT("Outputting minus expression not collection");
+            char* temp;
+            asprintf(&temp, "(%s - %s)", (yyvsp[-2].sval), (yyvsp[0].sval));
+            free((yyvsp[-2].sval));
+            free((yyvsp[0].sval));
+            (yyval.sval) = temp;
+        }
     }
-#line 1786 "lang.tab.c"
+#line 1805 "lang.tab.c"
     break;
 
-  case 38: /* expression: expression MUL expression  */
-#line 444 "lang.y"
+  case 39: /* expression: expression MUL expression  */
+#line 453 "lang.y"
                                 { 
         DEBUG_PRINT("Outputting multiplication expression");
         char* temp; 
@@ -1795,11 +1814,11 @@ yyreduce:
         free((yyvsp[0].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1799 "lang.tab.c"
+#line 1818 "lang.tab.c"
     break;
 
-  case 39: /* expression: expression DIV expression  */
-#line 452 "lang.y"
+  case 40: /* expression: expression DIV expression  */
+#line 461 "lang.y"
                                 { 
         DEBUG_PRINT("Outputting division expression");
         char* temp; 
@@ -1808,11 +1827,11 @@ yyreduce:
         free((yyvsp[0].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1812 "lang.tab.c"
+#line 1831 "lang.tab.c"
     break;
 
-  case 40: /* expression: expression INTERSECT expression  */
-#line 460 "lang.y"
+  case 41: /* expression: expression INTERSECT expression  */
+#line 469 "lang.y"
                                       { 
         DEBUG_PRINT("Outputting intersection expression");
         char* temp; 
@@ -1821,11 +1840,11 @@ yyreduce:
         free((yyvsp[0].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1825 "lang.tab.c"
+#line 1844 "lang.tab.c"
     break;
 
-  case 41: /* expression: expression UNION expression  */
-#line 468 "lang.y"
+  case 42: /* expression: expression UNION expression  */
+#line 477 "lang.y"
                                   { 
         DEBUG_PRINT("Outputting union expression");
         char* temp; 
@@ -1834,11 +1853,11 @@ yyreduce:
         free((yyvsp[0].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1838 "lang.tab.c"
+#line 1857 "lang.tab.c"
     break;
 
-  case 42: /* expression: LPAREN expression RPAREN  */
-#line 476 "lang.y"
+  case 43: /* expression: LPAREN expression RPAREN  */
+#line 485 "lang.y"
                                { 
         DEBUG_PRINT("Outputting expression in parentheses");
         char* temp; 
@@ -1846,22 +1865,22 @@ yyreduce:
         free((yyvsp[-1].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1850 "lang.tab.c"
+#line 1869 "lang.tab.c"
     break;
 
-  case 43: /* condition: identifier  */
-#line 486 "lang.y"
+  case 44: /* condition: identifier  */
+#line 495 "lang.y"
                {
         char* temp;
         asprintf(&temp, "&%s", (yyvsp[0].sval));
         free((yyvsp[0].sval));
         (yyval.sval) = temp;
     }
-#line 1861 "lang.tab.c"
+#line 1880 "lang.tab.c"
     break;
 
-  case 44: /* condition: expression EQ expression  */
-#line 492 "lang.y"
+  case 45: /* condition: expression EQ expression  */
+#line 501 "lang.y"
                                { 
         DEBUG_PRINT("Outputting equality condition");
         char* temp; 
@@ -1870,11 +1889,11 @@ yyreduce:
         free((yyvsp[0].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1874 "lang.tab.c"
+#line 1893 "lang.tab.c"
     break;
 
-  case 45: /* condition: expression NEQ expression  */
-#line 500 "lang.y"
+  case 46: /* condition: expression NEQ expression  */
+#line 509 "lang.y"
                                 { 
         char* temp; 
         asprintf(&temp, "(%s != %s)", (yyvsp[-2].sval), (yyvsp[0].sval)); 
@@ -1882,11 +1901,11 @@ yyreduce:
         free((yyvsp[0].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1886 "lang.tab.c"
+#line 1905 "lang.tab.c"
     break;
 
-  case 46: /* condition: expression LT expression  */
-#line 507 "lang.y"
+  case 47: /* condition: expression LT expression  */
+#line 516 "lang.y"
                                { 
         char* temp; 
         asprintf(&temp, "(%s < %s)", (yyvsp[-2].sval), (yyvsp[0].sval)); 
@@ -1894,11 +1913,11 @@ yyreduce:
         free((yyvsp[0].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1898 "lang.tab.c"
+#line 1917 "lang.tab.c"
     break;
 
-  case 47: /* condition: expression LE expression  */
-#line 514 "lang.y"
+  case 48: /* condition: expression LE expression  */
+#line 523 "lang.y"
                                { 
         char* temp; 
         asprintf(&temp, "(%s <= %s)", (yyvsp[-2].sval), (yyvsp[0].sval)); 
@@ -1906,11 +1925,11 @@ yyreduce:
         free((yyvsp[0].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1910 "lang.tab.c"
+#line 1929 "lang.tab.c"
     break;
 
-  case 48: /* condition: expression GT expression  */
-#line 521 "lang.y"
+  case 49: /* condition: expression GT expression  */
+#line 530 "lang.y"
                                { 
         char* temp; 
         asprintf(&temp, "(%s > %s)", (yyvsp[-2].sval), (yyvsp[0].sval)); 
@@ -1918,11 +1937,11 @@ yyreduce:
         free((yyvsp[0].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1922 "lang.tab.c"
+#line 1941 "lang.tab.c"
     break;
 
-  case 49: /* condition: expression GE expression  */
-#line 528 "lang.y"
+  case 50: /* condition: expression GE expression  */
+#line 537 "lang.y"
                                { 
         char* temp; 
         asprintf(&temp, "(%s >= %s)", (yyvsp[-2].sval), (yyvsp[0].sval)); 
@@ -1930,67 +1949,67 @@ yyreduce:
         free((yyvsp[0].sval)); 
         (yyval.sval) = temp; 
     }
-#line 1934 "lang.tab.c"
+#line 1953 "lang.tab.c"
     break;
 
-  case 50: /* set_literal: LBRACKET number_list RBRACKET  */
-#line 538 "lang.y"
+  case 51: /* set_literal: LBRACKET number_list RBRACKET  */
+#line 547 "lang.y"
                                   { 
         asprintf(&(yyval.sval), "{%s}", (yyvsp[-1].sval)); 
         free((yyvsp[-1].sval)); 
     }
-#line 1943 "lang.tab.c"
+#line 1962 "lang.tab.c"
     break;
 
-  case 51: /* number_list: NUMBER  */
-#line 545 "lang.y"
+  case 52: /* number_list: NUMBER  */
+#line 554 "lang.y"
            { asprintf(&(yyval.sval), "%d", (yyvsp[0].ival)); }
-#line 1949 "lang.tab.c"
+#line 1968 "lang.tab.c"
     break;
 
-  case 52: /* number_list: number_list COMMA NUMBER  */
-#line 546 "lang.y"
+  case 53: /* number_list: number_list COMMA NUMBER  */
+#line 555 "lang.y"
                                {
         char* temp;
         asprintf(&temp, "%s, %d", (yyvsp[-2].sval), (yyvsp[0].ival));
         free((yyvsp[-2].sval));
         (yyval.sval) = temp;
     }
-#line 1960 "lang.tab.c"
+#line 1979 "lang.tab.c"
     break;
 
-  case 53: /* number_list: %empty  */
-#line 552 "lang.y"
+  case 54: /* number_list: %empty  */
+#line 561 "lang.y"
                   { (yyval.sval) = strdup(""); }
-#line 1966 "lang.tab.c"
+#line 1985 "lang.tab.c"
     break;
 
-  case 54: /* col_literal: LBRACE string_list RBRACE  */
-#line 556 "lang.y"
+  case 55: /* col_literal: LBRACE string_list RBRACE  */
+#line 565 "lang.y"
                               { 
         asprintf(&(yyval.sval), "{%s}", (yyvsp[-1].sval)); 
         free((yyvsp[-1].sval)); 
     }
-#line 1975 "lang.tab.c"
+#line 1994 "lang.tab.c"
     break;
 
-  case 55: /* col_literal: LBRACE RBRACE  */
-#line 560 "lang.y"
+  case 56: /* col_literal: LBRACE RBRACE  */
+#line 569 "lang.y"
                     { (yyval.sval) = strdup("{}"); }
-#line 1981 "lang.tab.c"
+#line 2000 "lang.tab.c"
     break;
 
-  case 56: /* string_list: STRING_LITERAL  */
-#line 564 "lang.y"
+  case 57: /* string_list: STRING_LITERAL  */
+#line 573 "lang.y"
                    {
         asprintf(&(yyval.sval), "%s", (yyvsp[0].sval));
         free((yyvsp[0].sval));
     }
-#line 1990 "lang.tab.c"
+#line 2009 "lang.tab.c"
     break;
 
-  case 57: /* string_list: string_list COMMA STRING_LITERAL  */
-#line 568 "lang.y"
+  case 58: /* string_list: string_list COMMA STRING_LITERAL  */
+#line 577 "lang.y"
                                        {
         char* temp;
         asprintf(&temp, "%s, %s", (yyvsp[-2].sval), (yyvsp[0].sval));
@@ -1998,11 +2017,11 @@ yyreduce:
         free((yyvsp[0].sval));
         (yyval.sval) = temp;
     }
-#line 2002 "lang.tab.c"
+#line 2021 "lang.tab.c"
     break;
 
 
-#line 2006 "lang.tab.c"
+#line 2025 "lang.tab.c"
 
       default: break;
     }
@@ -2195,7 +2214,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 577 "lang.y"
+#line 586 "lang.y"
 
 
 symrec *putsym(const char *sym_name, int sym_type) {
@@ -2298,6 +2317,14 @@ int main(int argc, char **argv) {
     fprintf(outfile, "std::set<std::string> union_sets(const std::set<std::string>& a, const std::set<std::string>& b) {\n");
     fprintf(outfile, "    std::set<std::string> result = a;\n");
     fprintf(outfile, "    result.insert(b.begin(), b.end());\n");
+    fprintf(outfile, "    return result;\n");
+    fprintf(outfile, "}\n\n");
+
+    fprintf(outfile, "template<typename T>\n");
+    fprintf(outfile, "std::set<T> set_difference(const std::set<T>& a, const std::set<T>& b) {\n");
+    fprintf(outfile, "    std::set<T> result;\n");
+    fprintf(outfile, "    std::set_difference(a.begin(), a.end(), b.begin(), b.end(),\n");
+    fprintf(outfile, "                        std::inserter(result, result.begin()));\n");
     fprintf(outfile, "    return result;\n");
     fprintf(outfile, "}\n\n");
 

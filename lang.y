@@ -70,7 +70,10 @@ int isSetOrCollection(const char* var);
 %%
 
 program:
-    statements 
+    statements {
+        // Only here do we assign to statementsL
+        statementsL = $1;
+    }
     ;
 
 declaration:
@@ -148,22 +151,11 @@ identifier:
 statements:
     /* empty */ { $$ = strdup(""); }
     | statements statement {
-        DEBUG_PRINT("Before concatenation: %s", statementsL);
-        
-        // Accumulate the statements
         char* temp;
-        asprintf(&temp, "%s%s", statementsL, $2);
-        
-        DEBUG_PRINT("After concatenation: %s", temp);
-        
-        // Update statementsL to accumulate the generated code
-        free(statementsL);
-        statementsL = temp;
-        
-        // Pass along the accumulated statements
-        $$ = strdup(statementsL);
-        
-        free($2);  // Free the current statement since it's already added to statementsL
+        asprintf(&temp, "%s%s", $1, $2);
+        free($1);
+        free($2);
+        $$ = temp;
     }
     ;
 
@@ -187,6 +179,12 @@ statement:
         asprintf(&$$, "std::cout << %s;\nstd::cin >> %s;\n", $2, $3); 
         free($2); 
         free($3); 
+    }
+    | OUTPUT STRING_LITERAL UNION identifier UNION SEMICOLON {
+        DEBUG_PRINT("Output string literal, union: %s %s", $2, $4);
+        asprintf(&$$, "std::cout<< %s << %s.size() << std::endl;\n", $2, $4);
+        free($2);
+        free($4);
     }
     | OUTPUT STRING_LITERAL SEMICOLON { 
         DEBUG_PRINT("Output string literal: %s", $2);
@@ -268,7 +266,7 @@ statement:
         $$ = if_block;
 
         free($3);
-        // free($6);
+        free($6);
     }
 
 
@@ -383,6 +381,7 @@ statement:
         free($1);
         free($3);
     }
+
     
 
     ;
@@ -433,13 +432,23 @@ expression:
         free($1);
         free($3);
     }
-    | expression MINUS expression { 
-        DEBUG_PRINT("Outputting subtraction expression");
-         char* temp; 
-        asprintf(&temp, "intersection(%s, %s)", $1, $3); 
-        free($1); 
-        free($3); 
-        $$ = temp; 
+    | expression MINUS expression {
+        DEBUG_PRINT("Outputting Minus expression");
+        if (isSetOrCollection($1) && isSetOrCollection($3)) {
+            DEBUG_PRINT("Outputting set difference expression collection");
+            char* temp;
+            asprintf(&temp, "set_difference(%s, %s)", $1, $3);
+            free($1);
+            free($3);
+            $$ = temp;
+        } else {
+            DEBUG_PRINT("Outputting minus expression not collection");
+            char* temp;
+            asprintf(&temp, "(%s - %s)", $1, $3);
+            free($1);
+            free($3);
+            $$ = temp;
+        }
     }
     | expression MUL expression { 
         DEBUG_PRINT("Outputting multiplication expression");
@@ -676,6 +685,14 @@ int main(int argc, char **argv) {
     fprintf(outfile, "std::set<std::string> union_sets(const std::set<std::string>& a, const std::set<std::string>& b) {\n");
     fprintf(outfile, "    std::set<std::string> result = a;\n");
     fprintf(outfile, "    result.insert(b.begin(), b.end());\n");
+    fprintf(outfile, "    return result;\n");
+    fprintf(outfile, "}\n\n");
+
+    fprintf(outfile, "template<typename T>\n");
+    fprintf(outfile, "std::set<T> set_difference(const std::set<T>& a, const std::set<T>& b) {\n");
+    fprintf(outfile, "    std::set<T> result;\n");
+    fprintf(outfile, "    std::set_difference(a.begin(), a.end(), b.begin(), b.end(),\n");
+    fprintf(outfile, "                        std::inserter(result, result.begin()));\n");
     fprintf(outfile, "    return result;\n");
     fprintf(outfile, "}\n\n");
 
