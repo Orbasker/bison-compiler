@@ -1,0 +1,4 @@
+set hardware, software;
+   hardware = {"Apple", "Nvidia", "Sony"};
+   software = {"Apple", "Microsoft", "Google"};
+   output "Companies doing both hardware and software:" hardware & software;

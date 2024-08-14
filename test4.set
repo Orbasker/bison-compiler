@@ -1,0 +1,3 @@
+collection students;
+   students = {"Rafi_Suisa", "Tamar_Even", "Avi_Maoz"};
+   output "Students in class:" students;

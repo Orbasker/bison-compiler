@@ -113,11 +113,11 @@ Here are some short examples to illustrate various features of the Setlang langu
 3. **Basic Set Operations**:
    ```cpp
    set grades, gradesHigh;
-   grades = {85, 90, 78};
-   gradesHigh = {90, 95, 88};
-   output "All grades:", grades;
-   output "High grades:", gradesHigh;
-   output "Combined grades:", grades + gradesHigh;
+    grades = [85, 90, 78];
+    gradesHigh = [90, 95, 88];
+    output "All grades:" grades;
+    output "High grades:" gradesHigh;
+    output "Combined grades:" grades + gradesHigh;
    ```
 
 4. **Intersection of Sets**:
@@ -125,7 +125,7 @@ Here are some short examples to illustrate various features of the Setlang langu
    set hardware, software;
    hardware = {"Apple", "Nvidia", "Sony"};
    software = {"Apple", "Microsoft", "Google"};
-   output "Companies doing both hardware and software:", hardware & software;
+   output "Companies doing both hardware and software:" hardware & software;
    ```
 
 5. **Conditional Output Based on Collection**:
@@ -135,7 +135,7 @@ Here are some short examples to illustrate various features of the Setlang langu
    software = {"Apple", "Microsoft"};
 
    if (highTech & software == software)
-       output "All software companies are high-tech:", software;
+       output "All software companies are high-tech:" software;
    else
        output "Not all software companies are high-tech.";
    ```
@@ -144,13 +144,13 @@ Here are some short examples to illustrate various features of the Setlang langu
    ```cpp
    collection highGradeStudents;
    int grade;
-   input "Enter grade:", grade;
+   input "Enter grade:" grade;
 
    if (grade >= 90)
    {
        highGradeStudents = highGradeStudents + "Student_Name";
    }
-   output "High-grade students:", highGradeStudents;
+   output "High-grade students:" highGradeStudents;
    ```
 
 7. **Removing Elements from a Set**:
@@ -159,7 +159,7 @@ Here are some short examples to illustrate various features of the Setlang langu
    hardware = {"Sony", "Apple", "Google"};
    gaming = {"Sony", "Nintendo"};
 
-   output "Hardware but not gaming companies:", hardware - gaming;
+   output "Hardware but not gaming companies:" hardware - gaming;
    ```
 
 8. **Loop Through a Collection**:
@@ -168,7 +168,7 @@ Here are some short examples to illustrate various features of the Setlang langu
    students = {"Rafi_Suisa", "Tamar_Even", "Avi_Maoz"};
 
    for (student : students)
-       output "Student name:", student;
+       output "Student name:" student;
    ```
 
 9. **Counting Elements in a Set**:
@@ -176,7 +176,7 @@ Here are some short examples to illustrate various features of the Setlang langu
    set grades;
    grades = {85, 90, 78, 92};
 
-   output "Number of grades:", |grades|;
+   output "Number of grades:" |grades|;
    ```
 
 10. **Collection Union**:
@@ -185,6 +185,6 @@ Here are some short examples to illustrate various features of the Setlang langu
     software = {"Microsoft", "Google"};
     hardware = {"Sony", "Apple"};
 
-    output "Companies in either software or hardware:", software + hardware;
+    output "Companies in either software or hardware:" software + hardware;
     ```
 

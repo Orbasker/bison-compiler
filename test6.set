@@ -1,0 +1,6 @@
+set grades, gradesHigh;
+grades = [85, 90, 78];
+gradesHigh = [90, 95, 88];
+output "All grades:" grades;
+output "High grades:" gradesHigh;
+output "Combined grades:" grades + gradesHigh;

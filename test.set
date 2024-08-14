@@ -1,18 +1,5 @@
-collection class, highGradeStudents, lowGradeStudents, avgGradeStudents;
-set grades, gradesHigh;
-int grd;
-str student;
+collection software, hardware;
+    software = {"Microsoft", "Google"};
+    hardware = {"Sony", "Apple"};
 
-class = {"Rafi_Suisa", "Tamar_Even", "Avi_Maoz", "Eli_Kamer", "Shlomit_Raz",
-"Haim_Mizrachi", "Moshe_Samocha", "Tali_Raban", "Sharon_Tal", "Gal_Elbaz"};
-gradesHigh = [];
-highGradeStudents = {};
-
-for (student:class) {
-    output "Grade for:" student;
-    input ">" grd;
-    grades = grades + grd;
-    if (grd >= 90) {
-        gradesHigh = gradesHigh + grd;
-        highGradeStudents = highGradeStudents + student;
-    }
+    output "Companies in either software or hardware:" software + hardware;

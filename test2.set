@@ -1,0 +1,9 @@
+collection highGradeStudents;
+int grade;
+input "Enter grade:" grade;
+
+
+if (grade >= 90){
+       highGradeStudents = highGradeStudents + "Student_Name";
+   }
+   output "High-grade students:" highGradeStudents;

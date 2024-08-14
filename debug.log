@@ -1,20 +1,7 @@
 DEBUG: identifier from identifier: highTech
 DEBUG: identifier from identifier: CPP_highTech
 DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: gaming
-DEBUG: identifier from identifier: CPP_gaming
-DEBUG: current statement in identifier: 
-DEBUG: Outputting collection declaration for the following identifiers: CPP_highTech,CPP_gaming
-DEBUG: identifier from identifier: software
-DEBUG: identifier from identifier: CPP_software
-DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: hardware
-DEBUG: identifier from identifier: CPP_hardware
-DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: industrial
-DEBUG: identifier from identifier: CPP_industrial
-DEBUG: current statement in identifier: 
-DEBUG: Outputting collection declaration for the following identifiers: CPP_software,CPP_hardware,CPP_industrial
+DEBUG: Outputting collection declaration for the following identifiers: CPP_highTech
 DEBUG: identifier from identifier: highTech
 DEBUG: identifier from identifier: CPP_highTech
 DEBUG: current statement in identifier: 
@@ -30,185 +17,12 @@ DEBUG: statement from expression at the moment:
 DEBUG: statement from expression at the moment: 
 DEBUG: Outputting addition expression
 DEBUG: Outputting assignment statement with expression from statement
-DEBUG: identifier from identifier: gaming
-DEBUG: identifier from identifier: CPP_gaming
-DEBUG: current statement in identifier: 
-DEBUG: Outputting assignment statement with expression from statement
-DEBUG: identifier from identifier: software
-DEBUG: identifier from identifier: CPP_software
-DEBUG: current statement in identifier: 
-DEBUG: Outputting assignment statement with expression from statement
-DEBUG: identifier from identifier: hardware
-DEBUG: identifier from identifier: CPP_hardware
-DEBUG: current statement in identifier: 
-DEBUG: Outputting assignment statement with expression from statement
-DEBUG: identifier from identifier: industrial
-DEBUG: identifier from identifier: CPP_industrial
-DEBUG: current statement in identifier: 
-DEBUG: Outputting assignment statement with expression from statement
-DEBUG: identifier from identifier: software
-DEBUG: identifier from identifier: CPP_software
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_software
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: identifier from identifier: hardware
-DEBUG: identifier from identifier: CPP_hardware
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_hardware
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Outputting intersection expression
-DEBUG: Checking if intersection(CPP_software, CPP_hardware) is a set or collection
-DEBUG: Output string_lteral,expression: "Companies that sell hardware & software:" intersection(CPP_software, CPP_hardware)
-DEBUG: identifier from identifier: highSW
-DEBUG: identifier from identifier: CPP_highSW
-DEBUG: current statement in identifier: 
-DEBUG: Outputting collection declaration for the following identifiers: CPP_highSW
-DEBUG: identifier from identifier: highSW
-DEBUG: identifier from identifier: CPP_highSW
-DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: software
-DEBUG: identifier from identifier: CPP_software
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_software
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
 DEBUG: identifier from identifier: highTech
 DEBUG: identifier from identifier: CPP_highTech
 DEBUG: current statement in identifier: 
 DEBUG: identifier from expression: CPP_highTech
 DEBUG: statement from expression at the moment: 
 DEBUG: statement from expression at the moment: 
-DEBUG: Outputting intersection expression
-DEBUG: Outputting assignment statement with expression from statement
-DEBUG: Checking if CPP_highSW is a set or collection
+DEBUG: Checking if CPP_highTech is a set or collection
 DEBUG: Symbol type: 264
-DEBUG: Outputting set or collection range insertion
-DEBUG: Generated nested insertion: CPP_highSW.insert(CPP_highSW.begin(), CPP_highSW.end());
-
-DEBUG: identifier from identifier: highSW
-DEBUG: identifier from identifier: CPP_highSW
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_highSW
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: identifier from identifier: software
-DEBUG: identifier from identifier: CPP_software
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_software
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Outputting equality condition
-DEBUG: identifier from identifier: highSW
-DEBUG: identifier from identifier: CPP_highSW
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_highSW
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Checking if CPP_highSW is a set or collection
-DEBUG: Symbol type: 264
-DEBUG: Output string_lteral,expression: "All software companies are high-tech companies:" CPP_highSW
-DEBUG: identifier from identifier: highSW
-DEBUG: identifier from identifier: CPP_highSW
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_highSW
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Checking if CPP_highSW is a set or collection
-DEBUG: Symbol type: 264
-DEBUG: Output string_lteral,expression: "Not all software companies are high-tech companies:" CPP_highSW
-DEBUG: Outputting if statement with else statement
-DEBUG: identifier from identifier: highSW
-DEBUG: identifier from identifier: CPP_highSW
-DEBUG: current statement in identifier: 
-DEBUG: identifier from identifier: highSW
-DEBUG: identifier from identifier: CPP_highSW
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_highSW
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Outputting addition expression
-DEBUG: Checking if CPP_highSW is a set or collection
-DEBUG: Symbol type: 264
-DEBUG: Checking if "Playtika" is a set or collection
-DEBUG: Outputting assignment statement with expression from statement
-DEBUG: identifier from identifier: highSW
-DEBUG: identifier from identifier: CPP_highSW
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_highSW
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: identifier from identifier: software
-DEBUG: identifier from identifier: CPP_software
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_software
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Outputting equality condition
-DEBUG: identifier from identifier: highSW
-DEBUG: identifier from identifier: CPP_highSW
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_highSW
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Checking if CPP_highSW is a set or collection
-DEBUG: Symbol type: 264
-DEBUG: Output string_lteral,expression: "Now all software companies are high-tech companies:" CPP_highSW
-DEBUG: identifier from identifier: highSW
-DEBUG: identifier from identifier: CPP_highSW
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_highSW
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Checking if CPP_highSW is a set or collection
-DEBUG: Symbol type: 264
-DEBUG: Output string_lteral,expression: "Not all software companies are high-tech companies:" CPP_highSW
-DEBUG: Outputting if statement with else statement
-DEBUG: identifier from identifier: software
-DEBUG: identifier from identifier: CPP_software
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_software
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: identifier from identifier: hardware
-DEBUG: identifier from identifier: CPP_hardware
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_hardware
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Outputting addition expression
-DEBUG: Checking if CPP_software is a set or collection
-DEBUG: Symbol type: 264
-DEBUG: Checking if CPP_hardware is a set or collection
-DEBUG: Symbol type: 264
-DEBUG: Checking if union_sets(CPP_software, CPP_hardware) is a set or collection
-DEBUG: Output string_lteral,expression: "Companies that do software or hardware:" union_sets(CPP_software, CPP_hardware)
-DEBUG: identifier from identifier: hardware
-DEBUG: identifier from identifier: CPP_hardware
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_hardware
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: identifier from identifier: software
-DEBUG: identifier from identifier: CPP_software
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_software
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: identifier from identifier: gaming
-DEBUG: identifier from identifier: CPP_gaming
-DEBUG: current statement in identifier: 
-DEBUG: identifier from expression: CPP_gaming
-DEBUG: statement from expression at the moment: 
-DEBUG: statement from expression at the moment: 
-DEBUG: Outputting intersection expression
-DEBUG: Outputting expression in parentheses
-DEBUG: Outputting Minus expression
-DEBUG: Checking if CPP_hardware is a set or collection
-DEBUG: Symbol type: 264
-DEBUG: Checking if (intersection(CPP_software, CPP_gaming)) is a set or collection
-DEBUG: Outputting minus expression not collection
-DEBUG: Expression: (intersection(CPP_software, CPP_gaming))
-DEBUG: Checking if set_difference(CPP_hardware, (intersection(CPP_software, CPP_gaming))) is a set or collection
-DEBUG: Output string_lteral,expression: "Companies that sell Hardware but not Gaming Software:" set_difference(CPP_hardware, (intersection(CPP_software, CPP_gaming)))
+DEBUG: Output string_lteral,expression: "High-tech companies:" CPP_highTech

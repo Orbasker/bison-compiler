@@ -1,0 +1,4 @@
+collection highTech;
+   highTech = {"Apple", "Google"};
+   highTech = highTech + {"Microsoft", "Nvidia"};
+   output "High-tech companies:" highTech;

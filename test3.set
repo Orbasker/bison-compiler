@@ -1,5 +1,5 @@
-collection A,B;
-A = {1,2,3};
-B = {3,4,5};
-output "Intersection of A and B: " A & B;
-output "Union of A and B: " A | B;
+collection students;
+students = {"Rafi_Suisa", "Tamar_Even", "Avi_Maoz"};
+
+for (student : students)
+       output "Student name:" student;
